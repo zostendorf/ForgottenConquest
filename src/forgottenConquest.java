@@ -1,0 +1,79 @@
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+// You're name is unknown, the step off a boat in the year 1519.
+
+// Your boots are 
+public class forgottenConquest {
+	public static void main(String[] args) {
+		
+		gameIntro();
+		//System.out.println("You are in a dark forest. You see a path leading north and a path leading east.");
+		//System.out.println("Which path do you take? Type 'north' or 'east' to choose.");
+		
+		// create a scanner to read input from the user
+		Scanner scanner = new Scanner(System.in);
+		String path = scanner.nextLine();
+		
+		if (path.equals("north")) {
+		  // the user chose the north path
+		  System.out.println("You choose the north path and come across a river. Do you try to cross it? Type 'yes' or 'no'.");
+		  String choice = scanner.nextLine();
+		  
+		  if (choice.equals("yes")) {
+		    System.out.println("You try to cross the river but the current is too strong and you drown. You lose the game.");
+		  } else {
+		    System.out.println("You decide not to cross the river and turn back. You lose the game.");
+		  }
+		} else {
+		  // the user chose the east path
+		  System.out.println("You choose the east path and come across a clearing with a treasure chest. Do you open it? Type 'yes' or 'no'.");
+		  String choice = scanner.nextLine();
+		  
+		  if (choice.equals("yes")) {
+		    System.out.println("You open the treasure chest and find a golden ring. You win the game!");
+		  } else {
+		    System.out.println("You decide not to open the treasure chest and continue on your journey. You lose the game.");
+		  }
+	}
+    
+    // close the scanner to prevent resource leaks
+    scanner.close();
+    }
+  
+	public static void printWithDelays(String data, TimeUnit unit, long delay)
+	        throws InterruptedException {
+	    for (char ch:data.toCharArray()) {
+	        System.out.print(ch);
+	        unit.sleep(delay);
+	    }
+	    System.out.println();
+	}
+	
+	public static void gameIntro() {
+		try {
+			printWithDelays("1519 A.D.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("You've arrived.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("Land Ho!", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("You hear some call this part of the new world \"La Florida\"...", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("but others on the ship say we sailed past that land days ago.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("We've never seen a land like this before.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("The myth of jungles and endless beaches is myth no more.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("Could savages be true too?", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("The water is beaming blue", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("The sand is a pearl white", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("It eats your boot as you step off the boat.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("Welcome", TimeUnit.MILLISECONDS, 100);
+			System.out.println();
+			TimeUnit.SECONDS.sleep(1);
+			printWithDelays("to", TimeUnit.MILLISECONDS, 100);
+			System.out.println();
+			TimeUnit.SECONDS.sleep(1);
+			printWithDelays("FORGOTTEN CONQUEST", TimeUnit.MILLISECONDS, 100);
+			System.out.println();
+			TimeUnit.SECONDS.sleep(1);
+		} catch(InterruptedException e) {
+			System.out.println("got interrupted");
+		}
+	}
+}
