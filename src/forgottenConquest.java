@@ -4,13 +4,27 @@ import java.util.concurrent.TimeUnit;
 
 public class forgottenConquest {
 	public static void main(String[] args) {
-		buildWorld();
-		gameIntro();
-
+		Player player1 = new Player();
+		String player1Input = "";
 		// create a scanner to read input from the user
 		Scanner scanner = new Scanner(System.in);
-		String path = scanner.nextLine();
 
+		buildWorld();
+		// gameIntro();
+
+		//creates apple oject
+		GameObject apple = new GameObject();
+		apple.name = "apple";
+		player1.addToinventory(apple);
+
+		
+		while(!player1Input.equals("quit")){
+			System.out.println("What do you want to do?");
+			player1Input = scanner.nextLine();
+			if(player1Input.equals("inventory")){
+					player1.displayInventory();
+			}
+		}
     
 		// close the scanner to prevent resource leaks
 		scanner.close();
