@@ -1,11 +1,13 @@
 public class Player {
     public GameObject[] inventory = new GameObject[0];
+    public boolean hasMap = false;
 
     public void addToinventory(GameObject inventoryObject){
 
         inventory = new GameObject[inventory.length + 1];
         inventory[inventory.length-1] = inventoryObject;
-
+        if(inventoryObject.name.equals("map"))
+            hasMap = true;
     }
 
     public void removeFromInventory(GameObject inventoryObject){

@@ -6,6 +6,9 @@ public class forgottenConquest {
 	public static void main(String[] args) {
 		Player player1 = new Player();
 		String player1Input = "";
+		Map map = new Map();
+		map.name = "map";
+		map.currentLocation.setCoordinates(6,9);
 		// create a scanner to read input from the user
 		Scanner scanner = new Scanner(System.in);
 
@@ -16,13 +19,28 @@ public class forgottenConquest {
 		GameObject apple = new GameObject();
 		apple.name = "apple";
 		player1.addToinventory(apple);
+		player1.addToinventory(map);
+
 
 		
 		while(!player1Input.equals("quit")){
 			System.out.println("What do you want to do?");
 			player1Input = scanner.nextLine();
 			if(player1Input.equals("inventory")){
-					player1.displayInventory();
+				player1.displayInventory();
+			}
+			else if(player1Input.equals("map")){
+				if(player1.hasMap){
+					map.display();
+				}
+				else{
+					try{
+						printWithDelays("You don't have a map.", TimeUnit.MILLISECONDS, 100);
+					} catch(InterruptedException e) {
+						System.out.println("got interrupted");
+					}
+				}
+
 			}
 		}
     
@@ -45,14 +63,37 @@ public class forgottenConquest {
 			for(int j=0; j < world.length; j++){
 				world[i][j] = new Location();
 				world[i][j].setCoordinates(i,j);
-				world[i][j].displayCoordinates();
+				if(i==7 && j==9){
+					world[i][j].setName("Ship");
+				}
+				else if(i==7 && j==8){
+					world[i][j].setName("base camp");
+				}
+				else if(i==3 && j==9){
+					world[i][j].setName("Tulum");
+				}
+				else if(i==3 && j==1){
+					world[i][j].setName("Launa de Kaan Luum NE");
+				}
+				else if(i==3 && j==0){
+					world[i][j].setName("Launa de Kaan Luum NW");
+				}
+				else if(i==4 && j==0){
+					world[i][j].setName("Launa de Kaan Luum SW");
+				}
+				else if(i==4 && j==1){
+					world[i][j].setName("Launa de Kaan Luum SE");
+				}
+				else if(i<=4 && j==9){
+					world[i][j].setName("Open sea");
+				}
 			}
 		}
 	}
 
 	public static void gameIntro() {
 		try {
-			printWithDelays("1528 A.D.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("1519 A.D.", TimeUnit.MILLISECONDS, 100);
 			printWithDelays("You've arrived.", TimeUnit.MILLISECONDS, 100);
 			printWithDelays("Land Ho!", TimeUnit.MILLISECONDS, 100);
 			printWithDelays("You hear some call this part of the new world \"La Florida\"...", TimeUnit.MILLISECONDS, 100);
