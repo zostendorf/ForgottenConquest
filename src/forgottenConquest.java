@@ -1,9 +1,14 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
 public class forgottenConquest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Player player1 = new Player();
 		String player1Input = "";
 		Map map = new Map();
@@ -20,9 +25,15 @@ public class forgottenConquest {
 		apple.name = "apple";
 		player1.addToinventory(apple);
 		player1.addToinventory(map);
-
-
 		
+		Quest quest1 = new Quest("quest1");
+		System.out.print("quest1 created");
+		try {
+			runQuest(quest1);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		while(!player1Input.equals("quit")){
 			System.out.println("What do you want to do?");
 			player1Input = scanner.nextLine();
@@ -48,6 +59,14 @@ public class forgottenConquest {
 		scanner.close();
     }
   
+	public static void runQuest(Quest quest) throws FileNotFoundException, InterruptedException{
+		System.out.println("running quest: " + quest.title);
+		printWithDelays(quest.script, TimeUnit.MILLISECONDS, 50);
+	}
+
+		//TODO give quest objects from quest object
+
+
 	public static void printWithDelays(String data, TimeUnit unit, long delay)
 	        throws InterruptedException {
 	    for (char ch:data.toCharArray()) {
@@ -93,8 +112,8 @@ public class forgottenConquest {
 
 	public static void gameIntro() {
 		try {
-			printWithDelays("1519 A.D.", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("You've arrived.", TimeUnit.MILLISECONDS, 100);
+			printWithDelays("1519 A.D.", TimeUnit.MILLISECONDS, 50);
+			printWithDelays("You've arrived.", TimeUnit.MILLISECONDS, 50);
 			printWithDelays("Land Ho!", TimeUnit.MILLISECONDS, 100);
 			printWithDelays("You hear some call this part of the new world \"La Florida\"...", TimeUnit.MILLISECONDS, 100);
 			printWithDelays("but others on the ship say we sailed past that land days ago.", TimeUnit.MILLISECONDS, 100);
