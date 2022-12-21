@@ -3,69 +3,127 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
 public class forgottenConquest {
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, FileNotFoundException {
 		Player player1 = new Player();
 		String player1Input = "";
 		Map map = new Map();
-		map.name = "map";
-		map.currentLocation.setCoordinates(6,9);
+
+		player1.map.currentLocation.setCoordinates(6,9);
+		buildWorld();
+		gameIntro();
+
 		// create a scanner to read input from the user
 		Scanner scanner = new Scanner(System.in);
 
-		buildWorld();
-		// gameIntro();
-
-		//creates apple oject
+		// runQuest("quest1");
 		GameObject apple = new GameObject();
-		apple.name = "apple";
+		apple.setName("apple");
 		player1.addToinventory(apple);
-		player1.addToinventory(map);
-		
-		Quest quest1 = new Quest("quest1");
-		System.out.print("quest1 created");
-		try {
-			runQuest(quest1);
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		while(!player1Input.equals("quit")){
-			System.out.println("What do you want to do?");
+		do {
 			player1Input = scanner.nextLine();
-			if(player1Input.equals("inventory")){
-				player1.displayInventory();
-			}
-			else if(player1Input.equals("map")){
-				if(player1.hasMap){
-					map.display();
-				}
-				else{
-					try{
-						printWithDelays("You don't have a map.", TimeUnit.MILLISECONDS, 100);
-					} catch(InterruptedException e) {
-						System.out.println("got interrupted");
-					}
-				}
+			runPlayerCommand(player1, player1Input);
+		} while (!player1Input.equals("quit"));
 
-			}
-		}
-    
 		// close the scanner to prevent resource leaks
 		scanner.close();
     }
   
-	public static void runQuest(Quest quest) throws FileNotFoundException, InterruptedException{
-		System.out.println("running quest: " + quest.title);
-		printWithDelays(quest.script, TimeUnit.MILLISECONDS, 50);
+	public static void runPlayerCommand(Player player, String playerCommand){
+		ArrayList<String> commands = new ArrayList<String>();
+		commands.add("map");
+		commands.add("inventory");
+		commands.add("north");
+		commands.add("south");
+		commands.add("east");
+		commands.add("west");
+		commands.add("n");
+		commands.add("s");
+		commands.add("e");
+		commands.add("w");
+		commands.add("quit");
+		commands.add("help");
+		//commands.add("");
+		
+		if(!commands.contains(playerCommand)){
+			System.out.println(playerCommand + " is not a command. Type 'help' if you want to see a list of commands.");
+		}
+		else {
+			switch (playerCommand) {
+				case "help":
+					System.out.println(commands);
+					break;
+				case "north":
+					movePlayer(player, "north");
+					break;
+				case "south":
+					movePlayer(player, "south");
+					break;
+				case "east":
+					movePlayer(player, "east");
+					break;
+				case "west":
+					movePlayer(player, "west");
+					break;
+				case "n":
+					movePlayer(player, "north");
+					break;
+				case "s":
+					movePlayer(player, "south");
+					break;
+				case "e":
+					movePlayer(player, "east");
+					break;
+				case "w":
+					movePlayer(player, "west");
+					break;
+				case "i":
+					player.displayInventory();
+					break;
+				case "inventory":
+					player.displayInventory();
+					break;
+				case "map":
+					if(player.hasMap){
+						player.map.display();
+						System.out.println("You are at coordinate: [" + player.map.currentLocation.coordinateX + "," + player.map.currentLocation.coordinateY + "]");
+					}
+					else{
+						try{
+							printWithDelays("You don't have a map.", TimeUnit.MILLISECONDS, 100);
+						} catch(InterruptedException e) {
+							System.out.println("got interrupted");
+						}
+					}
+					break;			
+			}
+		}
 	}
 
-		//TODO give quest objects from quest object
-
+	public static void movePlayer(Player player, String direction){
+		if(direction.equals("north"))
+			player.map.currentLocation.setCoordinates(player.map.currentLocation.coordinateX+1,player.map.currentLocation.coordinateY);
+		if(direction.equals("south"))
+			player.map.currentLocation.setCoordinates(player.map.currentLocation.coordinateX-1,player.map.currentLocation.coordinateY);
+		if(direction.equals("east"))
+			player.map.currentLocation.setCoordinates(player.map.currentLocation.coordinateX,player.map.currentLocation.coordinateY+1);
+		if(direction.equals("west"))
+			player.map.currentLocation.setCoordinates(player.map.currentLocation.coordinateX,player.map.currentLocation.coordinateY-1);
+	}
+	
+	public static void runQuest(String questFileName) throws FileNotFoundException, InterruptedException{
+		Quest quest = new Quest(questFileName);
+		System.out.println("running quest: " + quest.title);
+		printWithDelays(quest.script, TimeUnit.MILLISECONDS, 50);
+		for(int i=0; i<quest.questObjects.length; i++){
+			//player.addToinventory(quest.questObjects[i]);
+		}
+	}	
 
 	public static void printWithDelays(String data, TimeUnit unit, long delay)
 	        throws InterruptedException {
@@ -112,24 +170,8 @@ public class forgottenConquest {
 
 	public static void gameIntro() {
 		try {
-			printWithDelays("1519 A.D.", TimeUnit.MILLISECONDS, 50);
-			printWithDelays("You've arrived.", TimeUnit.MILLISECONDS, 50);
-			printWithDelays("Land Ho!", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("You hear some call this part of the new world \"La Florida\"...", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("but others on the ship say we sailed past that land days ago.", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("We've never seen a land like this before.", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("The myth of jungles and endless beaches is myth no more.", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("Could savages be true too?", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("The water is beaming blue", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("The sand is a pearl white", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("It eats your boot as you step off the boat.", TimeUnit.MILLISECONDS, 100);
-			printWithDelays("Welcome", TimeUnit.MILLISECONDS, 100);
-			System.out.println();
-			TimeUnit.SECONDS.sleep(1);
-			printWithDelays("to", TimeUnit.MILLISECONDS, 100);
-			System.out.println();
-			TimeUnit.SECONDS.sleep(1);
-			printWithDelays("FORGOTTEN CONQUEST", TimeUnit.MILLISECONDS, 100);
+
+			printWithDelays("FORGOTTEN CONQUEST", TimeUnit.MILLISECONDS, 5);
 			System.out.println();
 			TimeUnit.SECONDS.sleep(1);
 		} catch(InterruptedException e) {
