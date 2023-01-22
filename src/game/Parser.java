@@ -84,9 +84,13 @@ public class Parser {
         vocab.put("down", WT.VERB);
         vocab.put("q", WT.VERB);
         vocab.put("quit", WT.VERB);
+
+        //ARTICLES
         vocab.put("a", WT.ARTICLE);
         vocab.put("an", WT.ARTICLE);
         vocab.put("the", WT.ARTICLE);
+
+        //PREPOSITIONS
         vocab.put("in", WT.PREPOSITION);
         vocab.put("into", WT.PREPOSITION);
         vocab.put("at", WT.PREPOSITION);
