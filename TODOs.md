@@ -1,5 +1,6 @@
 TODOs:
 - finish adding objects to rooms
+    - place more vines and palm leaves around starting point
 - add object names to parser vocab
 - Take multiple of the same object
 - Take objects with 2 word names

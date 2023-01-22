@@ -252,10 +252,11 @@ public class Game implements java.io.Serializable {
 
         Room Jungle70               = new Room();
             Jungle70List.add(new Thing("wood", "A log of Royal Palm wood", Jungle70));
-            Jungle70List.add(new Thing("wood", "A log of Royal Palm wood", Jungle70));
+            Jungle70List.add(new Thing("palm-leaves", "Large palm leaves", Jungle70));
         Room Jungle71               = new Room();
             Jungle71List.add(new Thing("vines", "Thick vines, good for making rope", Jungle71));
         Room Jungle72               = new Room();
+            Jungle72List.add(new Thing("palm-leaves", "Large palm leaves", Jungle72));
         Room UnknownRiver73         = new Room();
         Room Cave74                 = new Room();
         Room Jungle75               = new Room();
@@ -272,6 +273,7 @@ public class Game implements java.io.Serializable {
             Ocean79List.add(new Thing("barracuda", "A Barracuda", Ocean79));
 
         Room Trap80                 = new Room();
+            Trap80List.add(new Thing("skeleton", "The remains of someone fallen to the trap!", Trap80));
         Room Jungle81               = new Room();
             Jungle81List.add(new Thing("wood", "A log of Royal Palm wood", Jungle81));
             Jungle81List.add(new Thing("vines", "Thick vines, good for making rope", Jungle81));
@@ -285,7 +287,7 @@ public class Game implements java.io.Serializable {
             CenoteDasOjos84List.add(new Thing("fresh water", "fresh drinkable water", CenoteDasOjos84));
         Room Jungle85               = new Room();
             Jungle85List.add(new Thing("wood", "A log of Royal Palm wood", Jungle85));
-            Jungle85List.add(new Thing("wood", "A log of Royal Palm wood", Jungle85));
+            Jungle85List.add(new Thing("vines", "This vines, good for making rope", Jungle85));
         Room Beach86                = new Room();
             Beach86List.add(new Thing("sand", "A handful of sand", Beach86));
             Beach86List.add(new Thing("sea shell", "A shell from the sea. Bright and colorful", Beach86));

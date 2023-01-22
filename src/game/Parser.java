@@ -18,47 +18,51 @@ public class Parser {
     static HashMap<String, WT> vocab = new HashMap<>();
 
     static void initVocab() {
+
+        //NOUNS
         vocab.put("acorn", WT.NOUN);
+        vocab.put("amulet", WT.NOUN);
         vocab.put("bed", WT.NOUN);
+        vocab.put("bird stone", WT.NOUN);
         vocab.put("bone", WT.NOUN);
         vocab.put("bowl", WT.NOUN);
         vocab.put("box", WT.NOUN);
         vocab.put("button", WT.NOUN);
         vocab.put("carrot", WT.NOUN);
+        vocab.put("cat stone", WT.NOUN);
         vocab.put("chest", WT.NOUN);
+        vocab.put("coconut", WT.NOUN);
         vocab.put("coin", WT.NOUN);
         vocab.put("door", WT.NOUN);
         vocab.put("dust", WT.NOUN);
+        vocab.put("fresh water", WT.NOUN);
         vocab.put("gardenia", WT.NOUN);
         vocab.put("key", WT.NOUN);
         vocab.put("knife", WT.NOUN);
         vocab.put("lamp", WT.NOUN);
         vocab.put("leaflet", WT.NOUN);
         vocab.put("lever", WT.NOUN);
+        vocab.put("lizard stone", WT.NOUN);
+        vocab.put("moss", WT.NOUN);
+        vocab.put("orange", WT.NOUN);
+        vocab.put("palm-leaves", WT.NOUN);
         vocab.put("paper", WT.NOUN);
         vocab.put("pencil", WT.NOUN);
         vocab.put("sack", WT.NOUN);
+        vocab.put("salt water", WT.NOUN);
+        vocab.put("sand", WT.NOUN);
         vocab.put("sausage", WT.NOUN);
+        vocab.put("sea shell", WT.NOUN);
         vocab.put("sign", WT.NOUN);
         vocab.put("slot", WT.NOUN);
         vocab.put("squirrel", WT.NOUN);
-        vocab.put("sand", WT.NOUN);
-        vocab.put("wood", WT.NOUN);
         vocab.put("sword", WT.NOUN);
-        vocab.put("moss", WT.NOUN);
-        vocab.put("orange", WT.NOUN);
-        vocab.put("coconut", WT.NOUN);
-        vocab.put("fresh water", WT.NOUN);
-        vocab.put("salt water", WT.NOUN);
-        vocab.put("sea shell", WT.NOUN);
-        vocab.put("amulet", WT.NOUN);
-        vocab.put("cat stone", WT.NOUN);
-        vocab.put("lizard stone", WT.NOUN);
-        vocab.put("bird stone", WT.NOUN);
-        vocab.put("", WT.NOUN);
-        vocab.put("", WT.NOUN);
         vocab.put("tree", WT.NOUN);
+        vocab.put("vines", WT.NOUN);
         vocab.put("wombat", WT.NOUN);
+        vocab.put("wood", WT.NOUN);
+
+        //VERBS
         vocab.put("test", WT.VERB);
         vocab.put("get", WT.VERB);
         vocab.put("i", WT.VERB);
