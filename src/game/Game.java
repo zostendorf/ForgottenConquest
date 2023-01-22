@@ -254,11 +254,14 @@ public class Game implements java.io.Serializable {
             Jungle70List.add(new Thing("wood", "A log of Royal Palm wood", Jungle70));
             Jungle70List.add(new Thing("wood", "A log of Royal Palm wood", Jungle70));
         Room Jungle71               = new Room();
+            Jungle71List.add(new Thing("vines", "Thick vines, good for making rope", Jungle71));
         Room Jungle72               = new Room();
         Room UnknownRiver73         = new Room();
         Room Cave74                 = new Room();
         Room Jungle75               = new Room();
             Jungle72List.add(new Thing("wood", "A log of Royal Palm wood", Jungle72));
+            Jungle72List.add(new Thing("vines", "Thick vines, good for making rope", Jungle72));
+            Jungle72List.add(new Thing("palm-leaves", "Large leaves, fallen from the Royal Palms overhead", Jungle72));
         Room TulumVillage76         = new Room();
         Room TulumSmallPyramid77    = new Room();
         Room Beach78                = new Room();
@@ -271,6 +274,8 @@ public class Game implements java.io.Serializable {
         Room Trap80                 = new Room();
         Room Jungle81               = new Room();
             Jungle81List.add(new Thing("wood", "A log of Royal Palm wood", Jungle81));
+            Jungle81List.add(new Thing("vines", "Thick vines, good for making rope", Jungle81));
+            Jungle81List.add(new Thing("palm-leaves", "Large leaves, fallen from the Royal Palms overhead", Jungle81));
         Room Jungle82               = new Room();
             Jungle82List.add(new Thing("wood", "A log of Royal Palm wood", Jungle82));
         Room UnknownRiver83         = new Room();
@@ -308,6 +313,8 @@ public class Game implements java.io.Serializable {
         Room Jungle94               = new Room();
             Jungle94List.add(new Thing("moss", "A handful of tree moss", Jungle94));
             Jungle94List.add(new Thing("wood", "A log of Royal Palm wood", Jungle94));
+            Jungle94List.add(new Thing("vines", "Thick vines, good for making rope", Jungle94));
+            Jungle94List.add(new Thing("palm-leaves", "Large leaves, fallen from the Royal Palms overhead", Jungle94));
         Room Beach95                = new Room();
             Beach95List.add(new Thing("sand", "A handful of sand", Beach95));
             Beach95List.add(new Thing("sea shell", "A shell from the sea. Bright and colorful", Beach95));
@@ -424,7 +431,7 @@ public class Game implements java.io.Serializable {
         CenoteDasOjos84.init("Cenote Das Ojos", "", UnknownRiver83, Jungle85, Cave74, Jungle94, null, null, CenoteDasOjos84List);
         Jungle85.init("Jungle", "a thick canopy that blocks out much of the sunlight", CenoteDasOjos84, Beach86, Jungle75, Beach95, null, null, Jungle85List);
         Beach86.init("Beach", "More sand and shore stretching up the coast", Jungle85, Beach87, TulumVillage76, Ocean96, null, null, Beach86List);
-        Beach87.init("Beach", "The arrival point", Beach86, Ocean88, TulumSmallPyramid77, Raft97, null, null, Beach87List);
+        Beach87.init("Beach Outpost", "The arrival point", Beach86, Ocean88, TulumSmallPyramid77, Raft97, null, null, Beach87List);
         Ocean88.init("Open Ocean", "A vast expanse of saltwater.", Beach87, Ocean89, Beach78, Ship98, null, null, Ocean88List);
         Ocean89.init("Open Ocean", "Constant movement of waves and currents", Ocean89, null, Ocean79, Ocean99, null, null, Ocean89List);
 
@@ -716,9 +723,9 @@ public class Game implements java.io.Serializable {
                             + "\n"
                             + "\"Well....\"\n"
                             + "\"If we are to stake this land for Spain, we'll need an outpost\"\n"
-                            + "\"Go into the jungle west of here and collect some wood, then you men can get to building\"\n"
+                            + "\"Go into the jungle west of here and collect some wood and other materials, then you men can get to building\"\n"
                             + "\n"
-                            + "Head into the jungle and collect 3 pieces of wood. Return to the beach once you've collected enough");
+                            + "Head into the jungle and collect wood, vine for rope, and palm leaves for roofing. Return to the beach once you've collected everything");
     
     Quest quest2 = new Quest("quest2", "You are back at the beach, the arrival point.\n"
                             + "Savages line the beach. Captain Bota rests on his knees, bloodied\n"
@@ -745,7 +752,7 @@ public class Game implements java.io.Serializable {
                             + "\"This jungle holds many secrets, but we are here for only one... and you are going to find it for me\"\n"
                             + "\n"
                             + "\"Deep in this jungle is a sacred place. A palace that rises above the trees. There, you will find my Amulet of Quetzal\"\n"
-                            + "\"You bring it here, back to me, and I'll see to it can return to Spain"
+                            + "\"You bring it here, back to me, and I'll see to it can return to Spain\n"
                             + "\"Until then, I'll wait here and continue to feast all this fine Spanish wine your Captain Bota left me. How I've missed the taste so much\"\n"
                             + "\"Well now, run along Spaniard. I'll be seeing you soon\"\n"
                             + "\n"
@@ -815,7 +822,10 @@ public class Game implements java.io.Serializable {
     public String questCheck(String currentQuest){
         switch (currentQuest) {
             case "quest1":
-                if(player.describeThings().contains("wood") && player.getLocation().getName().contains("Beach")){
+                if(player.describeThings().contains("wood")
+                && player.describeThings().contains("vines")
+                && player.describeThings().contains("palm-leaves") 
+                && player.getLocation().getName().contains("Beach Outpost")){
                     quest1.complete();
                     quest2.begin();
                     currentQuest = quest2.getName();
@@ -824,7 +834,7 @@ public class Game implements java.io.Serializable {
                 }
                 break;
             case "quest2":
-                if(player.getLocation().equals("CobaPyramid00")){
+                if(player.getLocation().getName().contains("The Great Coba Pyramid")){
                     quest2.complete();
                     quest3.begin();
                     currentQuest = quest3.getName();
@@ -833,7 +843,10 @@ public class Game implements java.io.Serializable {
                 }
                 break;
             case "quest3":
-                if(player.getLocation().equals("CobaPyramid00") && player.inventory().contains("Bird Stone") && player.inventory().contains("Cat Stone") && player.inventory().contains("Lizard Stone")){
+                if(player.getLocation().getName().contains("The Great Coba Pyramid") 
+                && player.describeThings().contains("Bird Stone") 
+                && player.describeThings().contains("Cat Stone") 
+                && player.describeThings().contains("Lizard Stone")){
                     quest3.complete();
                     quest4.begin();
                     currentQuest = quest4.getName();
@@ -842,7 +855,8 @@ public class Game implements java.io.Serializable {
                 }
                 break;
             case "quest4":
-                if(player.inventory().contains("Quetzal Amulet") && player.getLocation().equals("Beach87")){
+                if(player.inventory().contains("Quetzal Amulet") 
+                && player.getLocation().getName().contains("Beach Outpost")){
                     quest4.complete();
                     quest5.begin();
                     currentQuest = quest5.getName();

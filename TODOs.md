@@ -8,8 +8,6 @@ TODOs:
 - block the raft and ship until final quest is complete
 - figure out how to skip/complete text on key stroke
 
-
-
 Story and Series of Events:
 
 - Arrive on beach and greeted by the captain
@@ -33,5 +31,3 @@ Side Events:
 - Panther: Upon entering the pather den you have the option to fight or flee. If you fight the panther can kill you or you can kill it and recieve some sort of item
 - Savages: Upon entering the savage village, you can fight or flee. Choosing to fight is certain death
 - Trap: Trap either kills you or opens up to other events
-
-

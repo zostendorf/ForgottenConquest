@@ -105,7 +105,7 @@ public class Parser {
             switch (wt.getWord() + wt3.getWord()) {
                 case "putin":
                 case "putinto":
-                    msg = AdventureGame.game.putObInContainer(wt2.getWord(), wt4.getWord());
+                    msg = ForgottenConquest.game.putObInContainer(wt2.getWord(), wt4.getWord());
                     break;
                 default:
                     msg = "I don't know how to " + wt.getWord() + " " + wt2.getWord() + " " + wt3.getWord() + " " + wt4.getWord() + "!";
@@ -129,10 +129,10 @@ public class Parser {
         } else {
             switch (wt.getWord() + wt2.getWord()) {
                 case "lookat":
-                    msg = AdventureGame.game.lookAtOb(wt3.getWord());
+                    msg = ForgottenConquest.game.lookAtOb(wt3.getWord());
                     break;
                 case "lookin":
-                    msg = AdventureGame.game.lookInOb(wt3.getWord());
+                    msg = ForgottenConquest.game.lookInOb(wt3.getWord());
                     break;
                 default:
                     msg = "I don't know how to " + wt.getWord() + " " + wt2.getWord() + " " + wt3.getWord() + "!";
@@ -155,16 +155,16 @@ public class Parser {
             switch (wt.getWord()) {
                 case "take":
                 case "get":
-                    msg = AdventureGame.game.takeOb(wt2.getWord());
+                    msg = ForgottenConquest.game.takeOb(wt2.getWord());
                     break;
                 case "drop":
-                    msg = AdventureGame.game.dropOb(wt2.getWord());
+                    msg = ForgottenConquest.game.dropOb(wt2.getWord());
                     break;
                 case "open":
-                    msg = AdventureGame.game.openOb(wt2.getWord());
+                    msg = ForgottenConquest.game.openOb(wt2.getWord());
                     break;
                 case "close":
-                    msg = AdventureGame.game.closeOb(wt2.getWord());
+                    msg = ForgottenConquest.game.closeOb(wt2.getWord());
                     break;
                 default:
                     msg += " (not yet implemented)";
@@ -183,33 +183,33 @@ public class Parser {
         } else {
             switch (wt.getWord()) {
                 case "n":
-                    AdventureGame.game.goN();
+                    ForgottenConquest.game.goN();
                     break;
                 case "s":
-                    AdventureGame.game.goS();
+                    ForgottenConquest.game.goS();
                     break;
                 case "w":
-                    AdventureGame.game.goW();
+                    ForgottenConquest.game.goW();
                     break;
                 case "e":
-                    AdventureGame.game.goE();
+                    ForgottenConquest.game.goE();
                     break;
                 case "up":
-                    AdventureGame.game.goUp();
+                    ForgottenConquest.game.goUp();
                     break;
                 case "down":
-                    AdventureGame.game.goDown();
+                    ForgottenConquest.game.goDown();
                     break;
                 case "l":
                 case "look":
-                    AdventureGame.game.look();
+                    ForgottenConquest.game.look();
                     break;
                 case "inventory":
                 case "i":
-                    AdventureGame.game.showInventory();
+                    ForgottenConquest.game.showInventory();
                     break;
                 case "test":
-                    AdventureGame.game.test();
+                    ForgottenConquest.game.test();
                     break;
                 default:
                     msg = wt.getWord() + " (not yet implemented)";
