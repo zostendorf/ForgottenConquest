@@ -6,6 +6,7 @@ import globals.Dir;
 public class Room extends ThingHolder implements java.io.Serializable {
 
     private Room n, s, w, e, up, down;
+    private boolean visited;
 
     public Room() {
         super("New Room", "", null, null); // init superclass
@@ -29,6 +30,7 @@ public class Room extends ThingHolder implements java.io.Serializable {
         this.up = anUp;
         this.down = aDown;
         setThings(tl);
+        visited = false;
     }
 
     // --- accessor methods ---
@@ -82,6 +84,14 @@ public class Room extends ThingHolder implements java.io.Serializable {
 
     public void setDown(Room down) {
         this.down = down;
+    }
+
+    public void visited(){
+        this.visited = true;
+    }
+
+    public boolean isVisited(){
+        return this.visited;
     }
 
     public String describe() {

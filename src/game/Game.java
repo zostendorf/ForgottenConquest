@@ -656,8 +656,9 @@ public class Game implements java.io.Serializable {
 
     public static void printWithDelays(String data, TimeUnit unit, long delay)
     throws InterruptedException {
+        String ANSI_GREEN = "\u001B[32m";
         for (char ch:data.toCharArray()) {
-            System.out.print(ch);
+            System.out.print(ANSI_GREEN + ch);
             unit.sleep(delay);
         }
         System.out.println();
@@ -814,7 +815,7 @@ public class Game implements java.io.Serializable {
     public String questCheck(String currentQuest){
         switch (currentQuest) {
             case "quest1":
-                if(player.inventory().contains("wood") && player.getLocation().equals("Beach87")){
+                if(player.describeThings().contains("wood") && player.getLocation().getName().contains("Beach")){
                     quest1.complete();
                     quest2.begin();
                     currentQuest = quest2.getName();
