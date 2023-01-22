@@ -258,6 +258,7 @@ public class Game implements java.io.Serializable {
         Room UnknownRiver73         = new Room();
         Room Cave74                 = new Room();
         Room Jungle75               = new Room();
+            Jungle72List.add(new Thing("wood", "A log of Royal Palm wood", Jungle72));
         Room TulumVillage76         = new Room();
         Room TulumSmallPyramid77    = new Room();
         Room Beach78                = new Room();
@@ -390,7 +391,7 @@ public class Game implements java.io.Serializable {
         UnknownShrine54.init("A Shrine", "A shrine stands alone in the jungle", Spring53, Jungle55, Jungle44, Jungle64, null, null, UnknownShrine54List);
         Jungle55.init("Jungle", "More trees and vines everywhere", UnknownShrine54, Jungle56, Pond45, Jungle65, null, null, Jungle55List);
         Jungle56.init("Jungle", "Soft, spongy ground covered in organic matter.", Jungle55, PantherDen57, Jungle46, TulumPyramid66, null, null, Jungle56List);
-        PantherDen57.init("Pather Den!", "", Jungle56, Jungle58, Jungle47, TulumVillage67, null, null, PantherDen57List);
+        PantherDen57.init("Panther Den!", "", Jungle56, Jungle58, Jungle47, TulumVillage67, null, null, PantherDen57List);
         Jungle58.init("Jungle", "A thick canopy that blocks out much of the sunlight", PantherDen57, Jungle59, Jungle48, Jungle68, null, null, Jungle58List);
         Jungle59.init("Jungle", "A jungle with a wide variety of plants and animals.", Jungle58, null, Trap49, Beach69, null, null, Jungle59List);
         
@@ -677,7 +678,7 @@ public class Game implements java.io.Serializable {
 
     public void showTitle() {
         String intro;
-
+        String ANSI_GREEN = "\u001B[32m";
                                                      
        intro = " _____ ___  ____   ____  ___ _____ _____ _____ _   _ \n"
        + "|  ___/ _ \\|  _ \\ / ___|/ _ |_   _|_   _| ____| \\ | |\n"
@@ -690,10 +691,9 @@ public class Game implements java.io.Serializable {
        + "    | |__| |_| | |\\  | |_| | |_| | |___ ___) || |    \n"
        + "     \\____\\___/|_| \\_|\\__ \\_\\___/|_____|____/ |_|    \n";
                                                             
-        System.out.println(intro);
+        System.out.println(ANSI_GREEN + intro);
         // showStr(intro);
     }
-    
 
     Quest quest1 = new Quest("quest1", "\n"
                             + "1519 A.D.\n"
