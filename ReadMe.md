@@ -1,1 +1,1 @@
-**Forgotten Conquest**
+![game_logo](./images/Game_Logo.png)
