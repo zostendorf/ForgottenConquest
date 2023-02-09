@@ -73,6 +73,9 @@ public class ForgottenConquest {
                     case "load":
                         loadGame();
                         break;
+                    case "help":
+                        game.showControls();
+                        break;
                     default:
                         output = game.runCommand(input);
                         break;

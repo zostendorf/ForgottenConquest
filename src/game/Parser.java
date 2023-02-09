@@ -76,6 +76,7 @@ public class Parser {
         vocab.put("close", WT.VERB);
         vocab.put("pull", WT.VERB);
         vocab.put("push", WT.VERB);
+        vocab.put("help", WT.VERB);
         vocab.put("n", WT.VERB);
         vocab.put("s", WT.VERB);
         vocab.put("w", WT.VERB);
