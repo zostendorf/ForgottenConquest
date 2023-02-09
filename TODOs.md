@@ -26,6 +26,7 @@ Story and Series of Events:
 - Its a map to atlantis
 - you take the ship to where it is marked on the map
 - Game Over
+- Need to allude to the sequel game after end of game
 
 Side Events:
 - Witch Doctor: Upon entering the witch doctors area you have the option to fight or flee. If you choose the fight, the witch doctor overpowers you with magic, and gives you something for your journey
