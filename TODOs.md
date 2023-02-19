@@ -8,6 +8,10 @@ TODOs:
 - unlock quests/events when specific objects are in the players inventory
 - block the raft and ship until final quest is complete
 - figure out how to skip/complete text on key stroke
+- Create Map window
+    - Window shows map
+    - Window always shows whole map
+    - Map areas are only revealed after visit
 
 Story and Series of Events:
 

@@ -670,6 +670,9 @@ public class Game implements java.io.Serializable {
         for (char ch:data.toCharArray()) {
             System.out.print(ANSI_GREEN + ch);
             unit.sleep(delay);
+            // if(scanner.hasNextLine()){
+            //     delay = 1;
+            // }
         }
         System.out.println();
     }

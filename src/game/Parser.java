@@ -43,6 +43,7 @@ public class Parser {
         vocab.put("leaflet", WT.NOUN);
         vocab.put("lever", WT.NOUN);
         vocab.put("lizard stone", WT.NOUN);
+        vocab.put("map", WT.NOUN);
         vocab.put("moss", WT.NOUN);
         vocab.put("orange", WT.NOUN);
         vocab.put("palm-leaves", WT.NOUN);

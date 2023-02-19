@@ -5,6 +5,7 @@ package game;
  */
 
 
+import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,6 +13,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 public class ForgottenConquest {
@@ -44,6 +53,60 @@ public class ForgottenConquest {
             System.out.print(e.getClass() + ": " + e.getMessage() + "\n");
         }
     }
+
+    private static <BufferedImage> void map() {
+        // Create a frame
+        JFrame mapFrame = new JFrame("Map");
+        //Use this for grid layout
+        //https://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html
+
+        //Creates the map panel
+        JPanel mapPanel = new JPanel() {
+            //Declares the background image
+            java.awt.image.BufferedImage image;
+            {
+                try {
+                    image = ImageIO.read(getClass().getResource("forgottenConquestMap.png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            //Paints the background image
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+
+            }
+        };
+
+        //Creates the player's map marker
+        JPanel playersMapMarker = new JPanel() {
+
+            //Paints the player's map marker
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(Color.RED);
+                g.fillOval(100, 100, 10, 10);
+            }
+        };
+
+
+        mapPanel.setPreferredSize(new Dimension(500,500));
+
+        mapPanel.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.weightx = 0.9;
+        c.gridx = 2;
+        c.gridy = 0;
+        mapPanel.add(playersMapMarker, c);
+
+        mapFrame.add(mapPanel);
+        mapFrame.pack();
+        mapFrame.setVisible(true);
+        }
     
 
     public static void main(String[] args) throws IOException {
@@ -76,6 +139,8 @@ public class ForgottenConquest {
                     case "help":
                         game.showControls();
                         break;
+                    case "map":
+                        map();
                     default:
                         output = game.runCommand(input);
                         break;
