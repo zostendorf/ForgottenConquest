@@ -7,9 +7,10 @@
  ### Map Marker
 - As a player, I need to see a flashing red dot on the map for where I am located
     - The dot is displayed and blinking. We need to figure out how to position the dot based on the player's current location. 
-    Get the players current location
-    calculate the pixel dimensions for the X and Y params of the setLocation function
-    pass the calculated values to the function.
+    - Get the players current location
+    - Probably want to add an ID var to the Room objects. preferrably something that is a 2-dimensional array. Like Room34 have a RoomID of "[3][4]"
+    - calculate the pixel dimensions for the X and Y params of the setLocation function
+    - pass the calculated values to the function.
 
 ### Objects
 - As a player, I need to have available all objects in rooms
