@@ -14,9 +14,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import gameUtils.BlinkLabel;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
@@ -778,31 +785,31 @@ public class Game implements java.io.Serializable {
 
     public void showMap() {
         try{
+            //Create Background Image 
             BufferedImage mapImg = ImageIO.read(new File("images/forgottenConquestMap.png"));
-            BufferedImage playerMarker = ImageIO.read(new File("images/forgottenConquestMap.png"));   
+            
+            //Create and Config JFrame
             JFrame frame = new JFrame("FORGOTTEN CONQUEST - MAP");
             frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             frame.setSize(515,535);
             frame.setResizable(false);
-            frame.setLocationRelativeTo(null); 
+            frame.setLocationRelativeTo(null);
+
+            //Apply Background Image
             frame.setContentPane(new JLabel(new ImageIcon(mapImg)));
 
-            GridBagLayout grid = new GridBagLayout();
-            frame.setLayout(grid);
-            GridBagConstraints gbc = new GridBagConstraints();
-            // gbc.insets = new Insets(10, 10, 10, 10);
-            // gbc.gridwidth = 10;
-            // gbc.gridheight = 10;
-            
-            gbc.gridwidth = GridBagConstraints.EAST;
-            //frame.add(new JLabel(new ImageIcon(playerMarker)), gbc);
-            frame.add(new JLabel("Hello!!!"), gbc);
+            //Create and Add Player Marker
+            BlinkLabel playerMarker = new BlinkLabel("⦿");
+            playerMarker.setFont(new Font("Serif", Font.BOLD, 40));
+            playerMarker.setBounds(262,263,50,30);
+            frame.setLayout(null);
+            frame.add(playerMarker);
+
             frame.pack();
-            //frame.add(new JLabel(new ImageIcon("images/forgottenConquestMap.png")));
-            //frame.add(locationDot);
             frame.setVisible(true);
     } catch(Exception e){
         }
+    
     }
 
     public void showControls() {

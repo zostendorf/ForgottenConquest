@@ -1,19 +1,40 @@
-TODOs:
-- finish adding objects to rooms
+# TODOs
+
+### Feature
+- Story
+    - Description/Acceptance Critera
+
+ ### Map Marker
+- As a player, I need to see a flashing red dot on the map for where I am located
+    - The dot is displayed and blinking. We need to figure out how to position the dot based on the player's current location. 
+    Get the players current location
+    calculate the pixel dimensions for the X and Y params of the setLocation function
+    pass the calculated values to the function.
+
+### Objects
+- As a player, I need to have available all objects in rooms
     - place more vines and palm leaves around starting point
-- add object names to parser vocab
-- Take multiple of the same object
-- Take objects with 2 word names
-- unlock quests/events after visiting specific places
-- unlock quests/events when specific objects are in the players inventory
-- block the raft and ship until final quest is complete
-- figure out how to skip/complete text on key stroke
 
-Map:
-- draw all special locations
-- fill environment/edges
+- As a player, I need to be able to enter the names of the objects into the command line
+    - add object names to parser vocab
 
-Story and Series of Events:
+- As a player I need to be able to take multiple of the same object
+
+- As a player I need to be able to take objects with 2 word names
+
+### Quests
+- As a player I need to be able to unlock quests/events after visiting specific places
+
+- As a player I need to be able to unlock quests/events when specific objects are in my inventory
+
+- As a player, I need the raft and ship blocked until final quest is complete
+
+### Interface
+- As a player, I need to be able to skip/complete text on key stroke
+
+
+
+# Story and Series of Events:
 
 - Arrive on beach and greeted by the captain
 - The captain mandates you retreive wood for the beach outpost
