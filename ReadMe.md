@@ -1,7 +1,12 @@
 ![game_logo](./images/Game_Logo.png)
 
+FORGOTTEN CONQUEST
 "New World" was an understatement... 
 
- - Run Game
+ - Creator: Zak Ostendorf
+ - About
+ - Compile and Run
+ - Repository Structure
+  - 
 
  
