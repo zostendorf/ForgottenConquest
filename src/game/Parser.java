@@ -85,6 +85,7 @@ public class Parser {
         vocab.put("down", WT.VERB);
         vocab.put("q", WT.VERB);
         vocab.put("quit", WT.VERB);
+        vocab.put("map", WT.VERB);
 
         //ARTICLES
         vocab.put("a", WT.ARTICLE);
@@ -216,6 +217,10 @@ public class Parser {
                 case "inventory":
                 case "i":
                     ForgottenConquest.game.showInventory();
+                    break;
+                case "map":
+                case "m":
+                    ForgottenConquest.game.showMap();
                     break;
                 case "test":
                     ForgottenConquest.game.test();

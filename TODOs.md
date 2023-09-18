@@ -9,6 +9,10 @@ TODOs:
 - block the raft and ship until final quest is complete
 - figure out how to skip/complete text on key stroke
 
+Map:
+- draw all special locations
+- fill environment/edges
+
 Story and Series of Events:
 
 - Arrive on beach and greeted by the captain

@@ -8,6 +8,20 @@ package game;
 import java.util.*;     // required for ArrayList
 import java.util.concurrent.TimeUnit;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
 import gameobjects.Actor;
 import gameobjects.ContainerThing;
 import gameobjects.Quest;
@@ -657,7 +671,7 @@ public class Game implements java.io.Serializable {
         }
         if (!s.isEmpty()) {
             try {
-                printWithDelays(s, TimeUnit.MILLISECONDS, 20);
+                printWithDelays(s, TimeUnit.MILLISECONDS, 2);   
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -705,28 +719,7 @@ public class Game implements java.io.Serializable {
     }
 
     Quest quest1 = new Quest("quest1", "\n"
-                            + "1519 A.D.\n"
-                            + "\n"
-                            + "The journey to the new world has been long...\n"
-                            + "...but we are finally here!\n"
-                            + "\n"
-                            + "You and the other men unload from the ship onto a raft\n"
-                            + "The Spaniard who paddled out to your ship is now bringing you and the others ashore\n"
-                            + "\n"
-                            + "You are at the Beach. The arrival point.\n"
-                            + "\"These are the men I was promised?\"\n"
-                            + "A short, fat man approaches...\n"
-                            + "\n"
-                            + "\"You'll do I suppose\"\n"
-                            + "\"I am your commander, Captain Bota\n"
-                            + "\n"
-                            + "Two other Spaniards fall in behind Captain Bota\n"
-                            + "\"You answer to me and no one else.\"\n"
-                            + "\n"
-                            + "\"Well....\"\n"
-                            + "\"If we are to stake this land for Spain, we'll need an outpost\"\n"
-                            + "\"Go into the jungle west of here and collect some wood and other materials, then you men can get to building\"\n"
-                            + "\n"
+
                             + "Head into the jungle and collect wood, vine for rope, and palm leaves for roofing. Return to the beach once you've collected everything");
     
     Quest quest2 = new Quest("quest2", "You are back at the beach, the arrival point.\n"
@@ -782,6 +775,35 @@ public class Game implements java.io.Serializable {
     Quest quest5 = new Quest("quest5", "Youve returned the amulet to the antaginist on the beach, but he still need to the cento rune to activate it. Go get it");
     Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
     String outro = "game over";
+
+    public void showMap() {
+        try{
+            BufferedImage mapImg = ImageIO.read(new File("images/forgottenConquestMap.png"));
+            BufferedImage playerMarker = ImageIO.read(new File("images/forgottenConquestMap.png"));   
+            JFrame frame = new JFrame("FORGOTTEN CONQUEST - MAP");
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setSize(515,535);
+            frame.setResizable(false);
+            frame.setLocationRelativeTo(null); 
+            frame.setContentPane(new JLabel(new ImageIcon(mapImg)));
+
+            GridBagLayout grid = new GridBagLayout();
+            frame.setLayout(grid);
+            GridBagConstraints gbc = new GridBagConstraints();
+            // gbc.insets = new Insets(10, 10, 10, 10);
+            // gbc.gridwidth = 10;
+            // gbc.gridheight = 10;
+            
+            gbc.gridwidth = GridBagConstraints.EAST;
+            //frame.add(new JLabel(new ImageIcon(playerMarker)), gbc);
+            frame.add(new JLabel("Hello!!!"), gbc);
+            frame.pack();
+            //frame.add(new JLabel(new ImageIcon("images/forgottenConquestMap.png")));
+            //frame.add(locationDot);
+            frame.setVisible(true);
+    } catch(Exception e){
+        }
+    }
 
     public void showControls() {
         String controls;
