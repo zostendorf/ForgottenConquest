@@ -27,8 +27,11 @@ TODO
 
 - globals
 
-# images
-- Map content
+## Images
+
+### Map
+![game_map](./images/forgottenConquestMap.png)
+
 
 
  
