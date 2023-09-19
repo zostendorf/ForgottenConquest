@@ -807,6 +807,7 @@ public class Game implements java.io.Serializable {
             playerMarker.setFont(new Font("Serif", Font.BOLD, 40));
  
             //Convert player location X and Y Coordinate to pixel width and height for player marker map position
+            //These values could use some dialing in, so that they are more aligned with the location they are actually in
             int playerMarkerPositionX = (player.getLocation().getRoomXCord() == 0) ? 25 : player.getLocation().getRoomXCord()*50;
             int playerMarkerPositionY = (player.getLocation().getRoomYCord() == 0) ? 26 : player.getLocation().getRoomYCord()*52;
 
