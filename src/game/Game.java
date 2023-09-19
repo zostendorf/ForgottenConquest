@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import gameUtils.BlinkLabel;
 
@@ -784,13 +785,15 @@ public class Game implements java.io.Serializable {
     Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
     String outro = "game over";
 
+    JFrame frame = new JFrame("FORGOTTEN CONQUEST - MAP");
+
     public void showMap() {
         try{
             //Create Background Image 
             BufferedImage mapImg = ImageIO.read(new File("images/forgottenConquestMap.png"));
             
             //Create and Config JFrame
-            JFrame frame = new JFrame("FORGOTTEN CONQUEST - MAP");
+            
             frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             frame.setSize(515,535);
             frame.setResizable(false);
@@ -858,6 +861,7 @@ public class Game implements java.io.Serializable {
             } else {
                 wordlist = Parser.wordList(lowstr);
                 s = Parser.parseCommand(wordlist);
+                showMap();
             }
         }
         return s;

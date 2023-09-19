@@ -58,7 +58,6 @@
 - If you fall into a trap you wake up in the Witch Doctors hut
 
 ### TechDebt
-
 - Move Quest text to files/DB
 - Move Room creation to file
 - Move Object creation to file
