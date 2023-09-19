@@ -237,9 +237,9 @@ public class Parser {
         String s = "";
         
         if (command.size() == 0) {
-            s = "You must write a command!";
+            s = "Say something, Spaniard!";
         } else if (command.size() > 4) {
-            s = "That command is too long!";
+            s = "What are you trying to say, Spaniard? Your command is too long!";
         } else {           
             switch (command.size()) {
                 case 1:
@@ -277,7 +277,7 @@ public class Parser {
                 }
             } else { // if word not found in vocab
                 command.add(new WordAndType(k, WT.ERROR));
-                errmsg = "Sorry, I don't understand '" + k + "'";
+                errmsg = "You speak in strange tongues, Spaniard. '" + k + "' isn't something well understood";
             }
         }
         if (!errmsg.isEmpty()) {
