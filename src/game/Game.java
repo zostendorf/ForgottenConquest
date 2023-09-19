@@ -807,8 +807,8 @@ public class Game implements java.io.Serializable {
             int roomYCoor = player.getLocation().getRoomYCord();
 
 
-            int playerMarkerPositionX = (roomXCoor == 0) ? 50 : player.getLocation().getRoomXCord()*50;
-            int playerMarkerPositionY = (roomYCoor == 0) ? 52 : player.getLocation().getRoomYCord()*52;
+            int playerMarkerPositionX = (roomXCoor == 0) ? 25 : player.getLocation().getRoomXCord()*50;
+            int playerMarkerPositionY = (roomYCoor == 0) ? 26 : player.getLocation().getRoomYCord()*52;
 
             System.out.println("player xCoor: " + playerMarkerPositionX);
             System.out.println("player yCoor: " + playerMarkerPositionY);
