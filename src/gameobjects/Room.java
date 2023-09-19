@@ -5,11 +5,15 @@ import globals.Dir;
 
 public class Room extends ThingHolder implements java.io.Serializable {
 
+    private int roomXCord;
+    private int roomYCord;
     private Room n, s, w, e, up, down;
     private boolean visited;
 
     public Room() {
         super("New Room", "", null, null); // init superclass
+        this.roomXCord = 0;
+        this.roomYCord = 0;
         this.n = null;
         this.s = null;
         this.w = null;
@@ -18,11 +22,13 @@ public class Room extends ThingHolder implements java.io.Serializable {
         this.down = null;
     }   
     
-    public void init(String aName, String aDescription,
+    public void init(int roomXCord, int roomYCord, String aName, String aDescription,
             Room aN, Room aS, Room aW, Room aE, Room anUp, Room aDown,
             ThingList tl) {
         setName(aName);
         setDescription(aDescription);
+        setRoomXCord(roomXCord);
+        setRoomYCord(roomYCord);
         this.n = aN;
         this.s = aS;
         this.w = aW;
@@ -34,6 +40,23 @@ public class Room extends ThingHolder implements java.io.Serializable {
     }
 
     // --- accessor methods ---
+    // Room X Coordinate
+    public int getRoomXCord() {
+        return roomXCord;
+    }
+    public void setRoomXCord(int roomXCordVal) {
+        this.roomXCord = roomXCordVal;
+    }    
+
+    // Room Y Coordinate
+    public int getRoomYCord() {
+        return roomYCord;
+    }
+
+    public void setRoomYCord(int roomYCordVal) {
+        this.roomXCord = roomYCordVal;
+    }   
+    
     // n
     public Room getN() {
         return n;

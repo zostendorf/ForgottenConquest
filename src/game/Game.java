@@ -359,115 +359,115 @@ public class Game implements java.io.Serializable {
         //trollRoomList.add(new ContainerThing("box", "a cardboard box", true, true, true, true, new ThingList("boxList"), trollRoom));
 
         //                 Room( name,   description,              N,        S,      W,      E,  [Up], [Down])
-        CobaPyramid00.init("The Great Coba Pyramid", "It's beautiful, massive. A step pyramid scraping the sky.", null, CobaAlter01, null, CobaGameCourt10, null, null, CobaPyramid00List);
-        CobaAlter01.init("The Alter of Coba", "A Shrine of some kind", CobaPyramid00, CobaSouthJungle02, null, CobaSmallPyramid11, null, null, CobaAlter01List);
-        CobaSouthJungle02.init("Jungle", "The foliage is clearing. There appears to be a massive structure to the north.", CobaAlter01, CobaUnknownShrine03, null, Jungle12, null, null, CobaSouthJungle02List);
-        CobaUnknownShrine03.init("Unknown Shrine", "A Shrine, but to who? Or what?", CobaSouthJungle02, CobaRiverMouth04, null, Jungle13, null, null, CobaUnknownShrine03List);
-        CobaRiverMouth04.init("Coba River Mouth", "The river begins here.", CobaUnknownShrine03, CobaRiverMouth04, null, CobaRiverCrossing14, null, null, CobaRiverMouth04List);
-        Jungle05.init("Jungle", "A dense part of the jungle. No westward passage here.", CobaRiverMouth04, Cave06, null, Jungle15, null, null, Jungle05List);
-        Cave06.init("Cave", "A dark cave at the western edge of the jungle.", Jungle05, Jungle07, null, Jungle16, null, null, Cave06List);
-        Jungle07.init("Jungle", "More Jungle. Can't go west from here.", Cave06, Jungle08, null, Jungle17, null, null, Jungle07List);
-        Jungle08.init("Jungle", "Another part of the jungle. Not able to head west from here.", Jungle07, Jungle09, null, Jungle18, null, null, Jungle08List);
-        Jungle09.init("Jungle", "More jungle. Very dense. Can't go south. Can't go west.", Jungle08, null, null, EgyptianShip19, null, null, Jungle09List);
+        CobaPyramid00.init(0,0,"The Great Coba Pyramid", "It's beautiful, massive. A step pyramid scraping the sky.", null, CobaAlter01, null, CobaGameCourt10, null, null, CobaPyramid00List);
+        CobaAlter01.init(0,1,"The Alter of Coba", "A Shrine of some kind", CobaPyramid00, CobaSouthJungle02, null, CobaSmallPyramid11, null, null, CobaAlter01List);
+        CobaSouthJungle02.init(0,2,"Jungle", "The foliage is clearing. There appears to be a massive structure to the north.", CobaAlter01, CobaUnknownShrine03, null, Jungle12, null, null, CobaSouthJungle02List);
+        CobaUnknownShrine03.init(0,3,"Unknown Shrine", "A Shrine, but to who? Or what?", CobaSouthJungle02, CobaRiverMouth04, null, Jungle13, null, null, CobaUnknownShrine03List);
+        CobaRiverMouth04.init(0,4,"Coba River Mouth", "The river begins here.", CobaUnknownShrine03, CobaRiverMouth04, null, CobaRiverCrossing14, null, null, CobaRiverMouth04List);
+        Jungle05.init(0,5,"Jungle", "A dense part of the jungle. No westward passage here.", CobaRiverMouth04, Cave06, null, Jungle15, null, null, Jungle05List);
+        Cave06.init(0,6,"Cave", "A dark cave at the western edge of the jungle.", Jungle05, Jungle07, null, Jungle16, null, null, Cave06List);
+        Jungle07.init(0,7,"Jungle", "More Jungle. Can't go west from here.", Cave06, Jungle08, null, Jungle17, null, null, Jungle07List);
+        Jungle08.init(0,8,"Jungle", "Another part of the jungle. Not able to head west from here.", Jungle07, Jungle09, null, Jungle18, null, null, Jungle08List);
+        Jungle09.init(0,9,"Jungle", "More jungle. Very dense. Can't go south. Can't go west.", Jungle08, null, null, EgyptianShip19, null, null, Jungle09List);
         
-        CobaGameCourt10.init("Coba Court", "A game court of some kind.", null, CobaSmallPyramid11, CobaPyramid00, Jungle20, null, null, CobaGameCourt10List);
-        CobaSmallPyramid11.init("Coba Minor Pyramid", "", CobaGameCourt10, Jungle12, CobaAlter01, Jungle21, null, null, CobaSmallPyramid11List);
-        Jungle12.init("Jungle", "The foliage is lightening up. A massive structure rises above the trees to the northwest.", CobaSmallPyramid11, Jungle13, CobaSouthJungle02, Jungle22, null, null, Jungle12List);
-        Jungle13.init("Jungle", "More trees and vines everywhere", Jungle12, CobaRiverCrossing14, CobaUnknownShrine03, Jungle23, null, null, Jungle13List);
-        CobaRiverCrossing14.init("Coba River Crossing", "", Jungle13, Jungle15, CobaRiverMouth04, CobaRiver24, null, null, CobaRiverCrossing14List);
-        Jungle15.init("Jungle", "Thick brush and trees in all directions", CobaRiverCrossing14, Jungle16, Jungle05, CobaRiver25, null, null, Jungle15List);
-        Jungle16.init("Jungle", "The vines stretch for forever", Jungle15, Jungle17, Cave06, Jungle26, null, null, Jungle16List);
-        Jungle17.init("Jungle", "The area teems with chirping insects and singing birds", Jungle16, Jungle18, Jungle07, Jungle27, null, null, Jungle17List);
-        Jungle18.init("Jungle", "The jungle is covered with a variety of trees, from tall and majestic to short and gnarled.", Jungle17, EgyptianShip19, Jungle08, Trap28, null, null, Jungle18List);
-        EgyptianShip19.init("A Beached Ship", "An ancient wooden ship, unlike any other. How did it get here.", Jungle18, null, Jungle09, Dungeon29, null, null, EgyptianShip19List);
+        CobaGameCourt10.init(1,0,"Coba Court", "A game court of some kind.", null, CobaSmallPyramid11, CobaPyramid00, Jungle20, null, null, CobaGameCourt10List);
+        CobaSmallPyramid11.init(1,1,"Coba Minor Pyramid", "", CobaGameCourt10, Jungle12, CobaAlter01, Jungle21, null, null, CobaSmallPyramid11List);
+        Jungle12.init(1,2,"Jungle", "The foliage is lightening up. A massive structure rises above the trees to the northwest.", CobaSmallPyramid11, Jungle13, CobaSouthJungle02, Jungle22, null, null, Jungle12List);
+        Jungle13.init(1,3,"Jungle", "More trees and vines everywhere", Jungle12, CobaRiverCrossing14, CobaUnknownShrine03, Jungle23, null, null, Jungle13List);
+        CobaRiverCrossing14.init(1,4,"Coba River Crossing", "", Jungle13, Jungle15, CobaRiverMouth04, CobaRiver24, null, null, CobaRiverCrossing14List);
+        Jungle15.init(1,5,"Jungle", "Thick brush and trees in all directions", CobaRiverCrossing14, Jungle16, Jungle05, CobaRiver25, null, null, Jungle15List);
+        Jungle16.init(1,6,"Jungle", "The vines stretch for forever", Jungle15, Jungle17, Cave06, Jungle26, null, null, Jungle16List);
+        Jungle17.init(1,7,"Jungle", "The area teems with chirping insects and singing birds", Jungle16, Jungle18, Jungle07, Jungle27, null, null, Jungle17List);
+        Jungle18.init(1,8,"Jungle", "The jungle is covered with a variety of trees, from tall and majestic to short and gnarled.", Jungle17, EgyptianShip19, Jungle08, Trap28, null, null, Jungle18List);
+        EgyptianShip19.init(1,9,"A Beached Ship", "An ancient wooden ship, unlike any other. How did it get here.", Jungle18, null, Jungle09, Dungeon29, null, null, EgyptianShip19List);
         
-        Jungle20.init("Jungle", "A treacherous forest", null, Jungle21, CobaGameCourt10, UnknownShrine30, null, null, Jungle20List);
-        Jungle21.init("Jungle", "The forest is humid and misty", Jungle20, Jungle22, CobaSmallPyramid11, Jungle31, null, null, Jungle21List);
-        Jungle22.init("Jungle", "A dense grove of trees and vines", Jungle21, Jungle23, Jungle12, Jungle32, null, null, Jungle22List);
-        Jungle23.init("Jungle", "Dense foliage everywhere", Jungle22, CobaRiver24, Jungle13, PantherDen33, null, null, Jungle23List);
-        CobaRiver24.init("Coba River", "A river of fresh water. Flowing from the west and turning south here", Jungle23, CobaRiver25, CobaRiverCrossing14, Jungle34, null, null, CobaRiver24List);
-        CobaRiver25.init("Coba River", "A river flowing from the north and turning east from here", CobaRiver24, Jungle26, Jungle15, CobaRiver35, null, null, CobaRiver25List);
-        Jungle26.init("Jungle", "Dense vegetation covering the ground and climbing up the trees.", CobaRiver25, Jungle27, Jungle16, SavageVillage36, null, null, Jungle26List);
-        Jungle27.init("Jungle", "A dense grove of trees and vines", Jungle26, Trap28, Jungle17, Jungle37, null, null, Jungle27List);
-        Trap28.init("Trap!", "A pit!", Jungle27, Dungeon29, Jungle18, Jungle38, null, null, Trap28List);
-        Dungeon29.init("A Dungeon", "", Trap28, null, EgyptianShip19, Cave39, null, null, Dungeon29List);
+        Jungle20.init(2,0,"Jungle", "A treacherous forest", null, Jungle21, CobaGameCourt10, UnknownShrine30, null, null, Jungle20List);
+        Jungle21.init(2,1,"Jungle", "The forest is humid and misty", Jungle20, Jungle22, CobaSmallPyramid11, Jungle31, null, null, Jungle21List);
+        Jungle22.init(2,2,"Jungle", "A dense grove of trees and vines", Jungle21, Jungle23, Jungle12, Jungle32, null, null, Jungle22List);
+        Jungle23.init(2,3,"Jungle", "Dense foliage everywhere", Jungle22, CobaRiver24, Jungle13, PantherDen33, null, null, Jungle23List);
+        CobaRiver24.init(2,4,"Coba River", "A river of fresh water. Flowing from the west and turning south here", Jungle23, CobaRiver25, CobaRiverCrossing14, Jungle34, null, null, CobaRiver24List);
+        CobaRiver25.init(2,5,"Coba River", "A river flowing from the north and turning east from here", CobaRiver24, Jungle26, Jungle15, CobaRiver35, null, null, CobaRiver25List);
+        Jungle26.init(2,6,"Jungle", "Dense vegetation covering the ground and climbing up the trees.", CobaRiver25, Jungle27, Jungle16, SavageVillage36, null, null, Jungle26List);
+        Jungle27.init(2,7,"Jungle", "A dense grove of trees and vines", Jungle26, Trap28, Jungle17, Jungle37, null, null, Jungle27List);
+        Trap28.init(2,8,"Trap!", "A pit!", Jungle27, Dungeon29, Jungle18, Jungle38, null, null, Trap28List);
+        Dungeon29.init(2,9,"A Dungeon", "", Trap28, null, EgyptianShip19, Cave39, null, null, Dungeon29List);
         
-        UnknownShrine30.init("A Shrine", "", null, Jungle31, Jungle20, Jungle40, null, null, UnknownShrine30List);
-        Jungle31.init("Jungle", "The area teems with chirping insects and singing birds", UnknownShrine30, Jungle32, Jungle21, Trap41, null, null, Jungle31List);
-        Jungle32.init("Jungle", "A forest with a wide variety of plants and animals", Jungle31, PantherDen33, Jungle22, SavageVillage42, null, null, Jungle32List);
-        PantherDen33.init("Panther Den!", "", Jungle32, Jungle34, Jungle23, Jungle43, null, null, PantherDen33List);
-        Jungle34.init("Jungle", "A lush, green landscape filled with towering trees and vines", PantherDen33, CobaRiver35, CobaRiver24, Jungle44, null, null, Jungle34List);
-        CobaRiver35.init("Coba River", "", Jungle34, SavageVillage36, CobaRiver25, Pond45, null, null, CobaRiver35List);
-        SavageVillage36.init("Savage Village", "Savages! Best get away quickly", CobaRiver35, Jungle37, Jungle26, Jungle46, null, null, SavageVillage36List);
-        Jungle37.init("Jungle", "The sun filters through the canopy in dappled shafts of light", SavageVillage36, Jungle38, Jungle27, Jungle47, null, null, Jungle37List);
-        Jungle38.init("Jungle", "The ground is soft and wet. The trees tower over head", Jungle37, Cave39, Trap28, Jungle48, null, null, Jungle38List);
-        Cave39.init("Cave", "", Jungle38, null, Dungeon29, Trap49, null, null, Cave39List);
+        UnknownShrine30.init(3,0,"A Shrine", "", null, Jungle31, Jungle20, Jungle40, null, null, UnknownShrine30List);
+        Jungle31.init(3,1,"Jungle", "The area teems with chirping insects and singing birds", UnknownShrine30, Jungle32, Jungle21, Trap41, null, null, Jungle31List);
+        Jungle32.init(3,2,"Jungle", "A forest with a wide variety of plants and animals", Jungle31, PantherDen33, Jungle22, SavageVillage42, null, null, Jungle32List);
+        PantherDen33.init(3,3,"Panther Den!", "", Jungle32, Jungle34, Jungle23, Jungle43, null, null, PantherDen33List);
+        Jungle34.init(3,4,"Jungle", "A lush, green landscape filled with towering trees and vines", PantherDen33, CobaRiver35, CobaRiver24, Jungle44, null, null, Jungle34List);
+        CobaRiver35.init(3,5,"Coba River", "", Jungle34, SavageVillage36, CobaRiver25, Pond45, null, null, CobaRiver35List);
+        SavageVillage36.init(3,6,"Savage Village", "Savages! Best get away quickly", CobaRiver35, Jungle37, Jungle26, Jungle46, null, null, SavageVillage36List);
+        Jungle37.init(3,7,"Jungle", "The sun filters through the canopy in dappled shafts of light", SavageVillage36, Jungle38, Jungle27, Jungle47, null, null, Jungle37List);
+        Jungle38.init(3,8,"Jungle", "The ground is soft and wet. The trees tower over head", Jungle37, Cave39, Trap28, Jungle48, null, null, Jungle38List);
+        Cave39.init(3,9,"Cave", "", Jungle38, null, Dungeon29, Trap49, null, null, Cave39List);
         
-        Jungle40.init("Jungle", "A dense grove of trees and vines", null, Trap41, UnknownShrine30, WitchDoctor50, null, null, Jungle40List);
-        Trap41.init("Trap!", "Look out! A net springs fromo the ground up into the trees!", Jungle40, SavageVillage42, Jungle31, Jungle51, null, null, Trap41List);
-        SavageVillage42.init("Savage Village!", "", Trap41, Jungle43, Jungle32, Jungle52, null, null, SavageVillage42List);
-        Jungle43.init("Jungle", "A forest with a thick underbrush and tangled vines.", SavageVillage42, Jungle44, PantherDen33, Spring53, null, null, Jungle43List);
-        Jungle44.init("Jungle", "The canopy blocks out much of the sunlight", Jungle43, Pond45, Jungle34, UnknownShrine54, null, null, Jungle44List);
-        Pond45.init("Pond", "A beautiful and isolated source of fresh water", Jungle44, Jungle46, CobaRiver35, Jungle55, null, null, Pond45List);
-        Jungle46.init("Jungle", "Thick brush and trees in all directions", Pond45, Jungle47, SavageVillage36, Jungle56, null, null, Jungle46List);
-        Jungle47.init("Jungle", "A treacherous forest", Jungle46, Jungle48, Jungle37, PantherDen57, null, null, Jungle47List);
-        Jungle48.init("Jungle", "Soft, spongy ground covered in organic matter.", Jungle47, Trap49, Jungle38, Jungle58, null, null, Jungle48List);
-        Trap49.init("Trap!", "Ah!! A massive log swings down from the trees!", Jungle48, null, Cave39, Jungle59, null, null, Trap49List);
+        Jungle40.init(4,0,"Jungle", "A dense grove of trees and vines", null, Trap41, UnknownShrine30, WitchDoctor50, null, null, Jungle40List);
+        Trap41.init(4,1,"Trap!", "Look out! A net springs fromo the ground up into the trees!", Jungle40, SavageVillage42, Jungle31, Jungle51, null, null, Trap41List);
+        SavageVillage42.init(4,2,"Savage Village!", "", Trap41, Jungle43, Jungle32, Jungle52, null, null, SavageVillage42List);
+        Jungle43.init(4,3,"Jungle", "A forest with a thick underbrush and tangled vines.", SavageVillage42, Jungle44, PantherDen33, Spring53, null, null, Jungle43List);
+        Jungle44.init(4,4,"Jungle", "The canopy blocks out much of the sunlight", Jungle43, Pond45, Jungle34, UnknownShrine54, null, null, Jungle44List);
+        Pond45.init(4,5,"Pond", "A beautiful and isolated source of fresh water", Jungle44, Jungle46, CobaRiver35, Jungle55, null, null, Pond45List);
+        Jungle46.init(4,6,"Jungle", "Thick brush and trees in all directions", Pond45, Jungle47, SavageVillage36, Jungle56, null, null, Jungle46List);
+        Jungle47.init(4,7,"Jungle", "A treacherous forest", Jungle46, Jungle48, Jungle37, PantherDen57, null, null, Jungle47List);
+        Jungle48.init(4,8,"Jungle", "Soft, spongy ground covered in organic matter.", Jungle47, Trap49, Jungle38, Jungle58, null, null, Jungle48List);
+        Trap49.init(4,9,"Trap!", "Ah!! A massive log swings down from the trees!", Jungle48, null, Cave39, Jungle59, null, null, Trap49List);
         
-        WitchDoctor50.init("Witch Doctor's Hut", "", null, Jungle51, Jungle40, Jungle60, null, null, WitchDoctor50List);
-        Jungle51.init("Jungle", "Dense vegetation covering the ground and climbing up the trees.", WitchDoctor50, Jungle52, Trap41, VikingShip61, null, null, Jungle51List);
-        Jungle52.init("Jungle", "A lush, green landscape filled with towering trees and vines", Jungle51, Spring53, SavageVillage42, VikingOutpost62, null, null, Jungle52List);
-        Spring53.init("Nature Spring", "", Jungle52, UnknownShrine54, Jungle43, UnknownRiver63, null, null, Spring53List);
-        UnknownShrine54.init("A Shrine", "A shrine stands alone in the jungle", Spring53, Jungle55, Jungle44, Jungle64, null, null, UnknownShrine54List);
-        Jungle55.init("Jungle", "More trees and vines everywhere", UnknownShrine54, Jungle56, Pond45, Jungle65, null, null, Jungle55List);
-        Jungle56.init("Jungle", "Soft, spongy ground covered in organic matter.", Jungle55, PantherDen57, Jungle46, TulumPyramid66, null, null, Jungle56List);
-        PantherDen57.init("Panther Den!", "", Jungle56, Jungle58, Jungle47, TulumVillage67, null, null, PantherDen57List);
-        Jungle58.init("Jungle", "A thick canopy that blocks out much of the sunlight", PantherDen57, Jungle59, Jungle48, Jungle68, null, null, Jungle58List);
-        Jungle59.init("Jungle", "A jungle with a wide variety of plants and animals.", Jungle58, null, Trap49, Beach69, null, null, Jungle59List);
+        WitchDoctor50.init(5,0,"Witch Doctor's Hut", "", null, Jungle51, Jungle40, Jungle60, null, null, WitchDoctor50List);
+        Jungle51.init(5,1,"Jungle", "Dense vegetation covering the ground and climbing up the trees.", WitchDoctor50, Jungle52, Trap41, VikingShip61, null, null, Jungle51List);
+        Jungle52.init(5,2,"Jungle", "A lush, green landscape filled with towering trees and vines", Jungle51, Spring53, SavageVillage42, VikingOutpost62, null, null, Jungle52List);
+        Spring53.init(5,3,"Nature Spring", "", Jungle52, UnknownShrine54, Jungle43, UnknownRiver63, null, null, Spring53List);
+        UnknownShrine54.init(5,4,"A Shrine", "A shrine stands alone in the jungle", Spring53, Jungle55, Jungle44, Jungle64, null, null, UnknownShrine54List);
+        Jungle55.init(5,5,"Jungle", "More trees and vines everywhere", UnknownShrine54, Jungle56, Pond45, Jungle65, null, null, Jungle55List);
+        Jungle56.init(5,6,"Jungle", "Soft, spongy ground covered in organic matter.", Jungle55, PantherDen57, Jungle46, TulumPyramid66, null, null, Jungle56List);
+        PantherDen57.init(5,7,"Panther Den!", "", Jungle56, Jungle58, Jungle47, TulumVillage67, null, null, PantherDen57List);
+        Jungle58.init(5,8,"Jungle", "A thick canopy that blocks out much of the sunlight", PantherDen57, Jungle59, Jungle48, Jungle68, null, null, Jungle58List);
+        Jungle59.init(5,9,"Jungle", "A jungle with a wide variety of plants and animals.", Jungle58, null, Trap49, Beach69, null, null, Jungle59List);
         
-        Jungle60.init("Jungle", "Soft, spongy ground covered in organic matter.", null, VikingShip61, WitchDoctor50, Jungle70, null, null, Jungle60List);
-        VikingShip61.init("A Beached Ship", "", Jungle60, VikingOutpost62, Jungle51, Jungle71, null, null, VikingShip61List);
-        VikingOutpost62.init("Ruined Outpost", "", VikingShip61, UnknownRiver63, Jungle52, Jungle72, null, null, VikingOutpost62List);
-        UnknownRiver63.init("Unknown River", "", VikingOutpost62, Jungle64, Spring53, UnknownRiver73, null, null, UnknownRiver63List);
-        Jungle64.init("Jungle", "A treacherous forest", UnknownRiver63, Jungle65, UnknownShrine54, Cave74, null, null, Jungle64List);
-        Jungle65.init("Jungle", "", Jungle64, TulumPyramid66, Jungle55, Jungle75, null, null, Jungle65List);
-        TulumPyramid66.init("Tulum Pyramid", "An architectural wonder. Who built it?", Jungle65, TulumVillage67, Jungle56, TulumVillage76, null, null, TulumPyramid66List);
-        TulumVillage67.init("Tulum Village", "A village, long deserted. Where is everyone?", TulumPyramid66, Jungle68, PantherDen57, TulumSmallPyramid77, null, null, TulumVillage67List);
-        Jungle68.init("Jungle", "A jungle with a thick underbrush and tangled vines.", TulumVillage67, Beach69, Jungle58, Beach78, null, null, Jungle68List);
-        Beach69.init("Beach", "", Jungle68, null, Jungle59, Ocean79, null, null, Beach69List);
+        Jungle60.init(6,0,"Jungle", "Soft, spongy ground covered in organic matter.", null, VikingShip61, WitchDoctor50, Jungle70, null, null, Jungle60List);
+        VikingShip61.init(6,1,"A Beached Ship", "", Jungle60, VikingOutpost62, Jungle51, Jungle71, null, null, VikingShip61List);
+        VikingOutpost62.init(6,2,"Ruined Outpost", "", VikingShip61, UnknownRiver63, Jungle52, Jungle72, null, null, VikingOutpost62List);
+        UnknownRiver63.init(6,3,"Unknown River", "", VikingOutpost62, Jungle64, Spring53, UnknownRiver73, null, null, UnknownRiver63List);
+        Jungle64.init(6,4,"Jungle", "A treacherous forest", UnknownRiver63, Jungle65, UnknownShrine54, Cave74, null, null, Jungle64List);
+        Jungle65.init(6,5,"Jungle", "", Jungle64, TulumPyramid66, Jungle55, Jungle75, null, null, Jungle65List);
+        TulumPyramid66.init(6,6,"Tulum Pyramid", "An architectural wonder. Who built it?", Jungle65, TulumVillage67, Jungle56, TulumVillage76, null, null, TulumPyramid66List);
+        TulumVillage67.init(6,7,"Tulum Village", "A village, long deserted. Where is everyone?", TulumPyramid66, Jungle68, PantherDen57, TulumSmallPyramid77, null, null, TulumVillage67List);
+        Jungle68.init(6,8,"Jungle", "A jungle with a thick underbrush and tangled vines.", TulumVillage67, Beach69, Jungle58, Beach78, null, null, Jungle68List);
+        Beach69.init(6,9,"Beach", "", Jungle68, null, Jungle59, Ocean79, null, null, Beach69List);
         
-        Jungle70.init("Jungle", "The ground is soft and wet. The trees tower over head", null, Jungle71, Jungle60, Trap80, null, null, Jungle70List);
-        Jungle71.init("Jungle", "Muddy, waterlogged ground", Jungle70, Jungle72, VikingShip61, Jungle81, null, null, Jungle71List);
-        Jungle72.init("Jungle", "A forest with a wide variety of plants and animals.", Jungle71, UnknownRiver73, VikingOutpost62, Jungle82, null, null, Jungle72List);
-        UnknownRiver73.init("Unknown River", "", Jungle72, Cave74, UnknownRiver63, UnknownRiver83, null, null, UnknownRiver73List);
-        Cave74.init("Cave", "", UnknownRiver73, Jungle75, Jungle64, CenoteDasOjos84, null, null, Cave74List);
-        Jungle75.init("Jungle", "A dense grove of trees and vines", Cave74, TulumVillage76, Jungle65, Jungle85, null, null, Jungle75List);
-        TulumVillage76.init("Tulum Village", "", Jungle75, TulumSmallPyramid77, TulumPyramid66, Beach86, null, null, TulumVillage76List);
-        TulumSmallPyramid77.init("Small Pyramid of Tulum", "", TulumVillage76, Beach78, TulumVillage67, Beach87, null, null, TulumSmallPyramid77List);
-        Beach78.init("Beach", "The sand is coarse and rough and it gets everywhere", TulumSmallPyramid77, Ocean79, Jungle68, Ocean88, null, null, Beach78List);
-        Ocean79.init("Ocean", "Sea as far as the eye can see", Beach78, null, Beach69, Ocean89, null, null, Ocean79List);
+        Jungle70.init(7,0,"Jungle", "The ground is soft and wet. The trees tower over head", null, Jungle71, Jungle60, Trap80, null, null, Jungle70List);
+        Jungle71.init(7,1,"Jungle", "Muddy, waterlogged ground", Jungle70, Jungle72, VikingShip61, Jungle81, null, null, Jungle71List);
+        Jungle72.init(7,2,"Jungle", "A forest with a wide variety of plants and animals.", Jungle71, UnknownRiver73, VikingOutpost62, Jungle82, null, null, Jungle72List);
+        UnknownRiver73.init(7,3,"Unknown River", "", Jungle72, Cave74, UnknownRiver63, UnknownRiver83, null, null, UnknownRiver73List);
+        Cave74.init(7,4,"Cave", "", UnknownRiver73, Jungle75, Jungle64, CenoteDasOjos84, null, null, Cave74List);
+        Jungle75.init(7,5,"Jungle", "A dense grove of trees and vines", Cave74, TulumVillage76, Jungle65, Jungle85, null, null, Jungle75List);
+        TulumVillage76.init(7,6,"Tulum Village", "", Jungle75, TulumSmallPyramid77, TulumPyramid66, Beach86, null, null, TulumVillage76List);
+        TulumSmallPyramid77.init(7,7,"Small Pyramid of Tulum", "", TulumVillage76, Beach78, TulumVillage67, Beach87, null, null, TulumSmallPyramid77List);
+        Beach78.init(7,8,"Beach", "The sand is coarse and rough and it gets everywhere", TulumSmallPyramid77, Ocean79, Jungle68, Ocean88, null, null, Beach78List);
+        Ocean79.init(7,9,"Ocean", "Sea as far as the eye can see", Beach78, null, Beach69, Ocean89, null, null, Ocean79List);
 
-        Trap80.init("Trap!", "", null, Jungle81, Jungle70, SavageVillage90, null, null, Trap80List);
-        Jungle81.init("Jungle", "A lush, green landscape filled with towering trees and vines", Trap80, Jungle82, Jungle71, Jungle91, null, null, Jungle81List);
-        Jungle82.init("Jungle", "Dense foliage all around", Jungle81, UnknownRiver83, Jungle72, Jungle92, null, null, Jungle82List);
-        UnknownRiver83.init("Unknown River", "", Jungle82, CenoteDasOjos84, UnknownRiver73, UnknownRiver93, null, null, UnknownRiver83List);
-        CenoteDasOjos84.init("Cenote Das Ojos", "", UnknownRiver83, Jungle85, Cave74, Jungle94, null, null, CenoteDasOjos84List);
-        Jungle85.init("Jungle", "a thick canopy that blocks out much of the sunlight", CenoteDasOjos84, Beach86, Jungle75, Beach95, null, null, Jungle85List);
-        Beach86.init("Beach", "More sand and shore stretching up the coast", Jungle85, Beach87, TulumVillage76, Ocean96, null, null, Beach86List);
-        Beach87.init("Beach Outpost", "The arrival point", Beach86, Ocean88, TulumSmallPyramid77, Raft97, null, null, Beach87List);
-        Ocean88.init("Open Ocean", "A vast expanse of saltwater.", Beach87, Ocean89, Beach78, Ship98, null, null, Ocean88List);
-        Ocean89.init("Open Ocean", "Constant movement of waves and currents", Ocean89, null, Ocean79, Ocean99, null, null, Ocean89List);
+        Trap80.init(8,0,"Trap!", "", null, Jungle81, Jungle70, SavageVillage90, null, null, Trap80List);
+        Jungle81.init(8,1,"Jungle", "A lush, green landscape filled with towering trees and vines", Trap80, Jungle82, Jungle71, Jungle91, null, null, Jungle81List);
+        Jungle82.init(8,2,"Jungle", "Dense foliage all around", Jungle81, UnknownRiver83, Jungle72, Jungle92, null, null, Jungle82List);
+        UnknownRiver83.init(8,3,"Unknown River", "", Jungle82, CenoteDasOjos84, UnknownRiver73, UnknownRiver93, null, null, UnknownRiver83List);
+        CenoteDasOjos84.init(8,4,"Cenote Das Ojos", "", UnknownRiver83, Jungle85, Cave74, Jungle94, null, null, CenoteDasOjos84List);
+        Jungle85.init(8,5,"Jungle", "a thick canopy that blocks out much of the sunlight", CenoteDasOjos84, Beach86, Jungle75, Beach95, null, null, Jungle85List);
+        Beach86.init(8,6,"Beach", "More sand and shore stretching up the coast", Jungle85, Beach87, TulumVillage76, Ocean96, null, null, Beach86List);
+        Beach87.init(8,7,"Beach Outpost", "The arrival point", Beach86, Ocean88, TulumSmallPyramid77, Raft97, null, null, Beach87List);
+        Ocean88.init(8,8,"Open Ocean", "A vast expanse of saltwater.", Beach87, Ocean89, Beach78, Ship98, null, null, Ocean88List);
+        Ocean89.init(8,9,"Open Ocean", "Constant movement of waves and currents", Ocean89, null, Ocean79, Ocean99, null, null, Ocean89List);
 
-        SavageVillage90.init("Savage Village", "Natives. Savage!", null, Jungle91, Trap80, null, null, null, SavageVillage90List);
-        Jungle91.init("Jungle", "Foliage everywhere. Can't pass eastward from here.", SavageVillage90, Jungle92, Jungle81, null, null, null, Jungle91List);
-        Jungle92.init("Jungle", "Intense jungle environment. Best to keep moving, but can't go east.", Jungle91, UnknownRiver93, Jungle82, null, null, null, Jungle92List);
-        UnknownRiver93.init("Unknown River", "A river without a name appears to end here.", Jungle92, Jungle94, UnknownRiver83, null, null, null, UnknownRiver93List);
-        Jungle94.init("Jungle", "The sun filters through the canopy in dappled shafts of light", UnknownRiver93, Beach95, CenoteDasOjos84, null, null, null, Jungle94List);
-        Beach95.init("Beach", "A lush, green landscape filled with towering trees and vines", Jungle94, Ocean96, Jungle85, null, null, null, Beach95List);
-        Ocean96.init("Ocean", "", Beach95, Raft97, Beach86, null, null, null, Ocean96List);
-        Raft97.init("The Raft", "This raft will get back to the expedition ship", Ocean96, Ship98, Beach87, null, null, null, Raft97List);
-        Ship98.init("The Expedition Ship", "Finally! The ship we arrived on its time to go home", Raft97, Ocean99, Ocean88, null, null, null, Ship98List);
-        Ocean99.init("Open Ocean", "Salty sea in all  directions", Ship98, null, Ocean89, null, null, null, Ocean99List);
+        SavageVillage90.init(9,0,"Savage Village", "Natives. Savage!", null, Jungle91, Trap80, null, null, null, SavageVillage90List);
+        Jungle91.init(9,1,"Jungle", "Foliage everywhere. Can't pass eastward from here.", SavageVillage90, Jungle92, Jungle81, null, null, null, Jungle91List);
+        Jungle92.init(9,2,"Jungle", "Intense jungle environment. Best to keep moving, but can't go east.", Jungle91, UnknownRiver93, Jungle82, null, null, null, Jungle92List);
+        UnknownRiver93.init(9,3,"Unknown River", "A river without a name appears to end here.", Jungle92, Jungle94, UnknownRiver83, null, null, null, UnknownRiver93List);
+        Jungle94.init(9,4,"Jungle", "The sun filters through the canopy in dappled shafts of light", UnknownRiver93, Beach95, CenoteDasOjos84, null, null, null, Jungle94List);
+        Beach95.init(9,5,"Beach", "A lush, green landscape filled with towering trees and vines", Jungle94, Ocean96, Jungle85, null, null, null, Beach95List);
+        Ocean96.init(9,6,"Ocean", "", Beach95, Raft97, Beach86, null, null, null, Ocean96List);
+        Raft97.init(9,7,"The Raft", "This raft will get back to the expedition ship", Ocean96, Ship98, Beach87, null, null, null, Raft97List);
+        Ship98.init(9,8,"The Expedition Ship", "Finally! The ship we arrived on its time to go home", Raft97, Ocean99, Ocean88, null, null, null, Ship98List);
+        Ocean99.init(9,9,"Open Ocean", "Salty sea in all  directions", Ship98, null, Ocean89, null, null, null, Ocean99List);
 
         map.add(CobaPyramid00);
         map.add(CobaAlter01);
@@ -694,6 +694,7 @@ public class Game implements java.io.Serializable {
         }
         System.out.println();
     }
+
     void showInventory() {
         showStr(player.inventory());
     }
@@ -715,14 +716,14 @@ public class Game implements java.io.Serializable {
        + "| |_ | | | | |_) | |  _| | | || |   | | |  _| |  \\| |\n"
        + "|  _|| |_| |  _ <| |_| | |_| || |   | | | |___| |\\  |\n"
        + "|_|   \\___/|_|  \\_\\____|\\___/ |_|   |_| |_____|_| \\_|\n"
-       + "      ____ ___  _   _  ___  _   _ _____ ____ _____   \n"
-       + "     / ___/ _ \\| \\ | |/ _ \\| | | | ____/ ___|_   _|  \n"
-       + "    | |  | | | |  \\| | | | | | | |  _| \\___ \\ | |    \n"
-       + "    | |__| |_| | |\\  | |_| | |_| | |___ ___) || |    \n"
-       + "     \\____\\___/|_| \\_|\\__ \\_\\___/|_____|____/ |_|    \n";
+       + "     ____ ___  _   _  ___  _   _ _____ ____ _____   \n"
+       + "    / ___/ _ \\| \\ | |/ _ \\| | | | ____/ ___|_   _|  \n"
+       + "   | |  | | | |  \\| | | | | | | |  _| \\___ \\ | |    \n"
+       + "   | |__| |_| | |\\  | |_| | |_| | |___ ___) || |    \n"
+       + "    \\____\\___/|_| \\_|\\__ \\_\\___/|_____|____/ |_|    \n";
                                                             
         System.out.println(ANSI_GREEN + intro);
-        // showStr(intro);
+
     }
 
     Quest quest1 = new Quest("quest1", "\n"
@@ -801,6 +802,10 @@ public class Game implements java.io.Serializable {
             //Create and Add Player Marker
             BlinkLabel playerMarker = new BlinkLabel("⦿");
             playerMarker.setFont(new Font("Serif", Font.BOLD, 40));
+            // get room id value for x and y
+            // map room id x and y to playerMarker bounds
+            System.out.println("player.getLocation: " + player.getLocation());
+            System.out.println("player.getLocation.getName: " +player.getLocation().getName());
             playerMarker.setBounds(262,263,50,30);
             frame.setLayout(null);
             frame.add(playerMarker);

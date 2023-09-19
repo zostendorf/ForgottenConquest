@@ -33,7 +33,7 @@
 ### Interface
 - As a player, I need to be able to skip/complete text on key stroke
 
-
+### Quests
 
 # Story and Series of Events:
 
@@ -54,10 +54,14 @@
 - Game Over
 - Need to allude to the sequel game after end of game
 
-Side Events:
+# Side Events:
 - Witch Doctor: Upon entering the witch doctors area you have the option to fight or flee. If you choose the fight, the witch doctor overpowers you with magic, and gives you something for your journey
 - Panther: Upon entering the pather den you have the option to fight or flee. If you fight the panther can kill you or you can kill it and recieve some sort of item
 - Savages: Upon entering the savage village, you can fight or flee. Choosing to fight is certain death
 - Trap: Trap either kills you or opens up to other events
 
-Test branch protection again again
+### TechDebt
+
+- Move Quest text to files/DB
+- Move Room creation to file
+- Move Object creation to file
