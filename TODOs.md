@@ -5,12 +5,8 @@
     - Description/Acceptance Critera
 
  ### Map Marker
-- As a player, I need to see a flashing red dot on the map for where I am located
-    - The dot is displayed and blinking. We need to figure out how to position the dot based on the player's current location. 
-    - Get the players current location
-    - Probably want to add an ID var to the Room objects. preferrably something that is a 2-dimensional array. Like Room34 have a RoomID of "[3][4]"
-    - calculate the pixel dimensions for the X and Y params of the setLocation function
-    - pass the calculated values to the function.
+- As a player, I need the map to update everytime I move
+    - update the JFrame to the same window everytime a command is entered
 
 ### Objects
 - As a player, I need to have available all objects in rooms
@@ -59,6 +55,7 @@
 - Panther: Upon entering the pather den you have the option to fight or flee. If you fight the panther can kill you or you can kill it and recieve some sort of item
 - Savages: Upon entering the savage village, you can fight or flee. Choosing to fight is certain death
 - Trap: Trap either kills you or opens up to other events
+- If you fall into a trap you wake up in the Witch Doctors hut
 
 ### TechDebt
 

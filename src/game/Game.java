@@ -802,11 +802,19 @@ public class Game implements java.io.Serializable {
             //Create and Add Player Marker
             BlinkLabel playerMarker = new BlinkLabel("⦿");
             playerMarker.setFont(new Font("Serif", Font.BOLD, 40));
-            // get room id value for x and y
-            // map room id x and y to playerMarker bounds
-            System.out.println("player.getLocation: " + player.getLocation());
-            System.out.println("player.getLocation.getName: " +player.getLocation().getName());
-            playerMarker.setBounds(262,263,50,30);
+            
+            int roomXCoor = player.getLocation().getRoomXCord();
+            int roomYCoor = player.getLocation().getRoomYCord();
+
+
+            int playerMarkerPositionX = (roomXCoor == 0) ? 50 : player.getLocation().getRoomXCord()*50;
+            int playerMarkerPositionY = (roomYCoor == 0) ? 52 : player.getLocation().getRoomYCord()*52;
+
+            System.out.println("player xCoor: " + playerMarkerPositionX);
+            System.out.println("player yCoor: " + playerMarkerPositionY);
+            System.out.println("player playerMarkerX: " + playerMarkerPositionX);
+            System.out.println("player playerMarkerY: " + playerMarkerPositionY);
+            playerMarker.setBounds(playerMarkerPositionX,playerMarkerPositionY,50,30);
             frame.setLayout(null);
             frame.add(playerMarker);
 

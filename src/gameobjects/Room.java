@@ -54,7 +54,7 @@ public class Room extends ThingHolder implements java.io.Serializable {
     }
 
     public void setRoomYCord(int roomYCordVal) {
-        this.roomXCord = roomYCordVal;
+        this.roomYCord = roomYCordVal;
     }   
     
     // n
