@@ -805,18 +805,11 @@ public class Game implements java.io.Serializable {
             //Create and Add Player Marker
             BlinkLabel playerMarker = new BlinkLabel("⦿");
             playerMarker.setFont(new Font("Serif", Font.BOLD, 40));
-            
-            int roomXCoor = player.getLocation().getRoomXCord();
-            int roomYCoor = player.getLocation().getRoomYCord();
+ 
+            //Convert player location X and Y Coordinate to pixel width and height for player marker map position
+            int playerMarkerPositionX = (player.getLocation().getRoomXCord() == 0) ? 25 : player.getLocation().getRoomXCord()*50;
+            int playerMarkerPositionY = (player.getLocation().getRoomYCord() == 0) ? 26 : player.getLocation().getRoomYCord()*52;
 
-
-            int playerMarkerPositionX = (roomXCoor == 0) ? 25 : player.getLocation().getRoomXCord()*50;
-            int playerMarkerPositionY = (roomYCoor == 0) ? 26 : player.getLocation().getRoomYCord()*52;
-
-            System.out.println("player xCoor: " + playerMarkerPositionX);
-            System.out.println("player yCoor: " + playerMarkerPositionY);
-            System.out.println("player playerMarkerX: " + playerMarkerPositionX);
-            System.out.println("player playerMarkerY: " + playerMarkerPositionY);
             playerMarker.setBounds(playerMarkerPositionX,playerMarkerPositionY,50,30);
             frame.setLayout(null);
             frame.add(playerMarker);
@@ -825,7 +818,6 @@ public class Game implements java.io.Serializable {
             frame.setVisible(true);
     } catch(Exception e){
         }
-    
     }
 
     public void showControls() {
