@@ -5,8 +5,6 @@
     - Description/Acceptance Critera
 
  ### Map Marker
-- As a player, I need the map to update everytime I move
-    - update the JFrame to the same window everytime a command is entered
 
 ### Objects
 - As a player, I need to have available all objects in rooms

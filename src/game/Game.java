@@ -254,16 +254,22 @@ public class Game implements java.io.Serializable {
         Room Jungle55               = new Room();
         Room Jungle56               = new Room();
         Room PantherDen57           = new Room();
+            PantherDen57List.add(new Thing("panther stone", "A stone, carved into the shape of a panther. How long has it been here?", PantherDen57));
         Room Jungle58               = new Room();
+            Jungle94List.add(new Thing("vines", "Thick vines, good for making rope", Jungle58));
         Room Jungle59               = new Room();
+            Jungle59List.add(new Thing("wood", "A log of Royal Palm wood", Jungle59));
 
         Room Jungle60               = new Room();
+            Jungle60List.add(new Thing("vines", "Thick vines, good for making rope", Jungle60));
+            Jungle60List.add(new Thing("palm-leaves", "Large leaves, fallen from the Royal Palms overhead", Jungle60));
         Room VikingShip61           = new Room();
         Room VikingOutpost62        = new Room();
         Room UnknownRiver63         = new Room();
         Room Jungle64               = new Room();
             Jungle64List.add(new Thing("wood", "A log of Royal Palm wood", Jungle64));
         Room Jungle65               = new Room();
+            Jungle65List.add(new Thing("palm-leaves", "Large leaves, fallen from the Royal Palms overhead", Jungle65));
         Room TulumPyramid66         = new Room();
         Room TulumVillage67         = new Room();
         Room Jungle68               = new Room();
@@ -354,12 +360,7 @@ public class Game implements java.io.Serializable {
         Thing flint             = new Thing("flint", "a piece of flint rock", null);
         Thing spear             = new Thing("spear", "A weapon of the natives. A long wooden shaft, and a spear tip made of flint", null);
 
-        //trollRoomList.add(new Treasure("carrot", "It is a very crunchy carrot", 1, trollRoom));
-        //trollRoomList.add(new ContainerThing("sack", "a smelly old sack", true, true, true, true, new ThingList("sackList"), trollRoom));
-        //trollRoomList.add(new ContainerThing("bowl", "a brass bowl", true, true, false, true, new ThingList("bowlList"), trollRoom));
-        //trollRoomList.add(new ContainerThing("box", "a cardboard box", true, true, true, true, new ThingList("boxList"), trollRoom));
-
-        //                 Room( name,   description,              N,        S,      W,      E,  [Up], [Down])
+        //Room(name, description, N, S, W, E, [Up], [Down])
         CobaPyramid00.init(0,0,"The Great Coba Pyramid", "It's beautiful, massive. A step pyramid scraping the sky.", null, CobaAlter01, null, CobaGameCourt10, null, null, CobaPyramid00List);
         CobaAlter01.init(0,1,"The Alter of Coba", "A Shrine of some kind", CobaPyramid00, CobaSouthJungle02, null, CobaSmallPyramid11, null, null, CobaAlter01List);
         CobaSouthJungle02.init(0,2,"Jungle", "The foliage is clearing. There appears to be a massive structure to the north.", CobaAlter01, CobaUnknownShrine03, null, Jungle12, null, null, CobaSouthJungle02List);
