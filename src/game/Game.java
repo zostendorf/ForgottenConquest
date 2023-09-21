@@ -29,6 +29,9 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import gameobjects.Actor;
 import gameobjects.ContainerThing;
@@ -713,18 +716,15 @@ public class Game implements java.io.Serializable {
         String intro;
         String ANSI_GREEN = "\u001B[32m";
                                                      
-       intro = " _____ ___  ____   ____  ___ _____ _____ _____ _   _ \n"
-       + "|  ___/ _ \\|  _ \\ / ___|/ _ |_   _|_   _| ____| \\ | |\n"
-       + "| |_ | | | | |_) | |  _| | | || |   | | |  _| |  \\| |\n"
-       + "|  _|| |_| |  _ <| |_| | |_| || |   | | | |___| |\\  |\n"
-       + "|_|   \\___/|_|  \\_\\____|\\___/ |_|   |_| |_____|_| \\_|\n"
-       + "     ____ ___  _   _  ___  _   _ _____ ____ _____   \n"
-       + "    / ___/ _ \\| \\ | |/ _ \\| | | | ____/ ___|_   _|  \n"
-       + "   | |  | | | |  \\| | | | | | | |  _| \\___ \\ | |    \n"
-       + "   | |__| |_| | |\\  | |_| | |_| | |___ ___) || |    \n"
-       + "    \\____\\___/|_| \\_|\\__ \\_\\___/|_____|____/ |_|    \n";
+       try {
+        intro = new String(Files.readAllBytes(Paths.get(".\\src\\gamePrompts\\intro.txt")));
+         System.out.println(ANSI_GREEN + intro);
+    } catch (IOException e) {
+        System.out.println("Error getting text file: " + e);
+        e.printStackTrace();
+    }
                                                             
-        System.out.println(ANSI_GREEN + intro);
+       
 
     }
 
@@ -824,21 +824,13 @@ public class Game implements java.io.Serializable {
 
     public void showControls() {
         String controls;
-        controls =  "\n"
-                    + "Controls:\n"
-                    + "N:       North\n"
-                    + "S:       South\n"
-                    + "E:       East\n"
-                    + "W:       West\n"
-                    + "L:       Look Around\n"
-                    + "T:       Take Item\n"
-                    + "D:       Drop Item\n"
-                    + "save:    Save Game\n"
-                    + "load:    Load Game\n"
-                    + "help:    Show Controls\n"
-                    + "Q:       Quit";
-        
-        showStr(controls);
+        try {
+            controls = new String(Files.readAllBytes(Paths.get(".\\src\\gamePrompts\\controls.txt")));
+            showStr(controls);
+        } catch (IOException e) {
+            System.out.println("Error getting text file: " + e);
+            e.printStackTrace();
+        }
     }
 
     public String runCommand(String inputstr) {
