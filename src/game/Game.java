@@ -29,6 +29,9 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import gameobjects.Actor;
 import gameobjects.ContainerThing;
@@ -712,82 +715,44 @@ public class Game implements java.io.Serializable {
     public void showTitle() {
         String intro;
         String ANSI_GREEN = "\u001B[32m";
-                                                     
-       intro = " _____ ___  ____   ____  ___ _____ _____ _____ _   _ \n"
-       + "|  ___/ _ \\|  _ \\ / ___|/ _ |_   _|_   _| ____| \\ | |\n"
-       + "| |_ | | | | |_) | |  _| | | || |   | | |  _| |  \\| |\n"
-       + "|  _|| |_| |  _ <| |_| | |_| || |   | | | |___| |\\  |\n"
-       + "|_|   \\___/|_|  \\_\\____|\\___/ |_|   |_| |_____|_| \\_|\n"
-       + "     ____ ___  _   _  ___  _   _ _____ ____ _____   \n"
-       + "    / ___/ _ \\| \\ | |/ _ \\| | | | ____/ ___|_   _|  \n"
-       + "   | |  | | | |  \\| | | | | | | |  _| \\___ \\ | |    \n"
-       + "   | |__| |_| | |\\  | |_| | |_| | |___ ___) || |    \n"
-       + "    \\____\\___/|_| \\_|\\__ \\_\\___/|_____|____/ |_|    \n";
-                                                            
-        System.out.println(ANSI_GREEN + intro);
+
+        try {
+            intro = new String(Files.readAllBytes(Paths.get(".\\src\\gamePrompts\\intro.txt")));
+            System.out.println(ANSI_GREEN + intro);
+        } catch (IOException e) {
+        System.out.println("Error getting text file: " + e);
+        e.printStackTrace();
+        }
 
     }
 
-    Quest quest1 = new Quest("quest1", "\n"
+    public Quest initQuest(String questName, String questTextPath) {
+        String questText = "";
 
-                            + "Head into the jungle and collect wood, vine for rope, and palm leaves for roofing. Return to the beach once you've collected everything");
+        try{
+            questText = new String(Files.readAllBytes(Paths.get(questTextPath)));
+        } catch (IOException e) {
+            System.out.println("Error getting text file: " + e);
+            e.printStackTrace();
+        }
+
+        Quest quest = new Quest(questName, questText);
+        return quest;
+    }
     
-    Quest quest2 = new Quest("quest2", "You are back at the beach, the arrival point.\n"
-                            + "Savages line the beach. Captain Bota rests on his knees, bloodied\n"
-                            + "\n"
-                            + "A man emerges from behind the line of savages, but he does not look like the rest of them\n"
-                            + "He looks like you, a man from the east\n"
-                            + "The man pulls Captain Bota's head back by his hair. His eyes meet yours\n"
-                            + "\n"
-                            + "\"You see what happens to unchecked ambition?\", the man says, seemingly to you\n"
-                            + "With his other hand, the man draws a dagger across Bota's throat\n"
-                            + "Bota's body falls into the sand\n"
-                            + "\"Your captain would not cooperate. I'm hoping you will not make the same mistake\"\n"
-                            + "\"I think it's time you understand why you are really here\n"
-                            + "\n"
-                            + "\"You believe you were sent here to tame this land and stake it for Spain, Aye?\n"
-                            + "\"I assure you, the men you call leaders in Spain are drunk with power, but they are not fools\"\n"
-                            + "\"Do you really think you came all this way for some sand and trees?\"\n"
-                            + "\"No\"\n"
-                            + "\"You are here for the same reason I am... For the Amulet\"\n"
-                            + "\n"
-                            + "The man comes closer. Grining, as he takes a cloth from his pocket and wipes his blade of Bota's blood\n"
-                            + "\"We'll make good use of you Spaniard\"\n"
-                            + "\n"
-                            + "\"This jungle holds many secrets, but we are here for only one... and you are going to find it for me\"\n"
-                            + "\n"
-                            + "\"Deep in this jungle is a sacred place. A palace that rises above the trees. There, you will find my Amulet of Quetzal\"\n"
-                            + "\"You bring it here, back to me, and I'll see to it can return to Spain\n"
-                            + "\"Until then, I'll wait here and continue to feast all this fine Spanish wine your Captain Bota left me. How I've missed the taste so much\"\n"
-                            + "\"Well now, run along Spaniard. I'll be seeing you soon\"\n"
-                            + "\n"
-                            + "\n Head into the jungle and retreive the Amulet");
-                            
+    Quest quest1 = initQuest("quest1", ".\\src\\gamePrompts\\quests\\quest1.txt");
+    Quest quest2 = initQuest("quest2", ".\\src\\gamePrompts\\quests\\quest2.txt");
+    Quest quest3 = initQuest("quest3", ".\\src\\gamePrompts\\quests\\quest3.txt");
+    Quest quest4 = initQuest("quest4", ".\\src\\gamePrompts\\quests\\quest4.txt");
+    Quest quest5 = initQuest("quest5", ".\\src\\gamePrompts\\quests\\quest5.txt");
 
-    Quest quest3 = new Quest("quest3", "Finally. The Coba pyramid. It's absolutely massive.\n"
-                            + "nearly as tall as the Cathedral of Barcelona. Maybe taller!"
-                            + "As but where would the Amulet be?\n"
-                            + "The stairs, perhaps there is something at the top."
-                            + "\n"
-                            + "You climb the stairs, well over one hundred in number..."
-                            + "\n"
-                            + "Incredible. Higher than any point in the forest. The jungle stretches on in every direction."
-                            + "There is a door!\n"
-                            + "You push but it does not budge.\n"
-                            + "there are slots in the door, and engravings above each slot.\n"
-                            + "An engraving of a bird.\n"
-                            + "An engraving of a lizard.\n"
-                            + "And an engraving of a cat.\n"
-                            + "\n"
-                            + "There must be objects that fit these slots. Maybe once they're placed, the door will open.\n");
-
-    Quest quest4 = new Quest("quest4", "Youve gotten the stones and have returned to the pyramid. You get the Amulet and now need to take it the antaginist");
-    Quest quest5 = new Quest("quest5", "Youve returned the amulet to the antaginist on the beach, but he still need to the cento rune to activate it. Go get it");
-    Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
+    // Quest quest4 = new Quest("quest4", "Youve gotten the stones and have returned to the pyramid. You get the Amulet and now need to take it the antaginist");
+    // Quest quest5 = new Quest("quest5", "Youve returned the amulet to the antaginist on the beach, but he still need to the cento rune to activate it. Go get it");
+    // Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
+    
     String outro = "game over";
 
     JFrame frame = new JFrame("FORGOTTEN CONQUEST - MAP");
-
     public void showMap() {
         try{
             //Create Background Image 
@@ -824,21 +789,13 @@ public class Game implements java.io.Serializable {
 
     public void showControls() {
         String controls;
-        controls =  "\n"
-                    + "Controls:\n"
-                    + "N:       North\n"
-                    + "S:       South\n"
-                    + "E:       East\n"
-                    + "W:       West\n"
-                    + "L:       Look Around\n"
-                    + "T:       Take Item\n"
-                    + "D:       Drop Item\n"
-                    + "save:    Save Game\n"
-                    + "load:    Load Game\n"
-                    + "help:    Show Controls\n"
-                    + "Q:       Quit";
-        
-        showStr(controls);
+        try {
+            controls = new String(Files.readAllBytes(Paths.get(".\\src\\gamePrompts\\controls.txt")));
+            showStr(controls);
+        } catch (IOException e) {
+            System.out.println("Error getting text file: " + e);
+            e.printStackTrace();
+        }
     }
 
     public String runCommand(String inputstr) {

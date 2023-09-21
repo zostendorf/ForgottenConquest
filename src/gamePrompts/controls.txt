@@ -1,0 +1,10 @@
+
+Controls:
+
+Move          Action               Game
+--------------------------------------------------------    
+N:  North   | L:  Look Around    | save:  Save Game         
+S:  South   | T:  Take Item      | load:  Load Game
+E:  East    | D:  Drop Item      | help:  Show Controls
+W:  West    |                    | Q:       Quit
+
