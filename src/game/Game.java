@@ -745,11 +745,8 @@ public class Game implements java.io.Serializable {
     Quest quest3 = initQuest("quest3", ".\\src\\gamePrompts\\quests\\quest3.txt");
     Quest quest4 = initQuest("quest4", ".\\src\\gamePrompts\\quests\\quest4.txt");
     Quest quest5 = initQuest("quest5", ".\\src\\gamePrompts\\quests\\quest5.txt");
+    Quest quest6 = initQuest("quest6", ".\\src\\gamePrompts\\quests\\quest6.txt");
 
-    // Quest quest4 = new Quest("quest4", "Youve gotten the stones and have returned to the pyramid. You get the Amulet and now need to take it the antaginist");
-    // Quest quest5 = new Quest("quest5", "Youve returned the amulet to the antaginist on the beach, but he still need to the cento rune to activate it. Go get it");
-    // Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
-    
     String outro = "game over";
 
     JFrame frame = new JFrame("FORGOTTEN CONQUEST - MAP");
@@ -878,31 +875,5 @@ public class Game implements java.io.Serializable {
         }
         return currentQuest;
      }
-    // Test..... BEGIN
-    void showTest(String s) {
-        showStr("> " + s);
-        showStr(runCommand(s));
-
-    }
-
-    void test() {
-        // utility method to let me try out bits of code while developing the game            
-        showStr("---BEGIN TEST---");
-        //  showThingsInRoom(); // this works ok when no objects are in containers
-        showTest("get carrot");
-        showTest("get bowl");
-        showTest("get sack");
-        showTest("get box");
-        showTest("put carrot in bowl");
-        showTest("put bowl in sack");
-        showTest("put sack in box");
-        showTest("put box in bowl");
-        showTest("put sack in bowl");
-        showTest("put carrot in box");
-        showTest("i");
-        showStr("---END TEST---");
-
-    }
-    // Test..... END
 
 }
