@@ -223,7 +223,7 @@ public class Parser {
                     ForgottenConquest.game.showMap();
                     break;
                 case "test":
-                    ForgottenConquest.game.test();
+                    System.out.println("No tests have been created (9/23/23)");
                     break;
                 default:
                     msg = wt.getWord() + " (not yet implemented)";
