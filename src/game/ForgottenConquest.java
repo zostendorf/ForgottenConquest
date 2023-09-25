@@ -61,7 +61,7 @@ public class ForgottenConquest {
         game.showStr(game.quest1.getIntro());
         game.quest1.begin();
         currentQuest = game.quest1.getName();
-        
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         do {
             System.out.print("> ");
             input = in.readLine();

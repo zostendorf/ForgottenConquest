@@ -4,7 +4,7 @@
 - Story
     - Description/Acceptance Critera
 
- ### Map Marker
+### Map Marker
 
 ### Objects
 - As a player, I need to have available all objects in rooms

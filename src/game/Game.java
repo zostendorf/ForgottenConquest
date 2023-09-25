@@ -717,7 +717,7 @@ public class Game implements java.io.Serializable {
         String ANSI_GREEN = "\u001B[32m";
 
         try {
-            intro = new String(Files.readAllBytes(Paths.get(".\\src\\gamePrompts\\intro.txt")));
+            intro = new String(Files.readAllBytes(Paths.get("src/gamePrompts/intro.txt")));
             System.out.println(ANSI_GREEN + intro);
         } catch (IOException e) {
         System.out.println("Error getting text file: " + e);
@@ -740,12 +740,12 @@ public class Game implements java.io.Serializable {
         return quest;
     }
     
-    Quest quest1 = initQuest("quest1", ".\\src\\gamePrompts\\quests\\quest1.txt");
-    Quest quest2 = initQuest("quest2", ".\\src\\gamePrompts\\quests\\quest2.txt");
-    Quest quest3 = initQuest("quest3", ".\\src\\gamePrompts\\quests\\quest3.txt");
-    Quest quest4 = initQuest("quest4", ".\\src\\gamePrompts\\quests\\quest4.txt");
-    Quest quest5 = initQuest("quest5", ".\\src\\gamePrompts\\quests\\quest5.txt");
-    Quest quest6 = initQuest("quest6", ".\\src\\gamePrompts\\quests\\quest6.txt");
+    Quest quest1 = initQuest("quest1", "src/gamePrompts/quests/quest1.txt");
+    Quest quest2 = initQuest("quest2", "src/gamePrompts/quests/quest2.txt");
+    Quest quest3 = initQuest("quest3", "src/gamePrompts/quests/quest3.txt");
+    Quest quest4 = initQuest("quest4", "src/gamePrompts/quests/quest4.txt");
+    Quest quest5 = initQuest("quest5", "src/gamePrompts/quests/quest5.txt");
+    Quest quest6 = initQuest("quest6", "src/gamePrompts/quests/quest6.txt");
 
     String outro = "game over";
 
@@ -787,7 +787,7 @@ public class Game implements java.io.Serializable {
     public void showControls() {
         String controls;
         try {
-            controls = new String(Files.readAllBytes(Paths.get(".\\src\\gamePrompts\\controls.txt")));
+            controls = new String(Files.readAllBytes(Paths.get("src/gamePrompts/controls.txt")));
             showStr(controls);
         } catch (IOException e) {
             System.out.println("Error getting text file: " + e);
