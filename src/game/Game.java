@@ -869,7 +869,6 @@ public class Game implements java.io.Serializable {
                     showStr(quest2.getIntro());
                     return currentQuest;
                 }
-                break;
             case "quest2":
                 if(player.getLocation().getName().contains("The Great Coba Pyramid")){
                     quest2.complete();
